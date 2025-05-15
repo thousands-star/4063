@@ -1,92 +1,88 @@
-# Note: This script is for testing UART communication within the same PC. short the TX and RX pins on the FT232
+# uart_send_receive.py
 import serial
 import time
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Load quantized CSV
-filename = "./uart_ready_output.csv"
-df = pd.read_csv(filename)  # Should contain 'Quantized' column
+TXDELAY = 0.0005
 
-# === Preview plot before transmission ===
-plt.figure(figsize=(14, 5))
+def preview_csv_plot(filename):
+    df = pd.read_csv(filename)
 
-# Left: Sample Index vs Quantized
-ax1 = plt.subplot(1, 2, 1)
-ax1.plot(df['Quantized'], marker='o', linestyle='-', markersize=2, color='gray')
-ax1.set_title("Preview: Index vs Quantized")
-ax1.set_xlabel("Sample Index")
-ax1.set_ylabel("Quantized Value (0-255)")
-ax1.grid(True)
+    plt.figure(figsize=(14, 5))
 
-# Right: Time vs Quantized
-ax2 = plt.subplot(1, 2, 2)
-if 'time' in df.columns:
-    ax2.plot(df['time'], df['Quantized'], marker='x', linestyle='-', markersize=2, color='purple')
-    ax2.set_title("Preview: Time vs Quantized")
-    ax2.set_xlabel("Time (s)")
-    ax2.set_ylabel("Quantized Value (0-255)")
-    ax2.grid(True)
-else:
-    ax2.text(0.5, 0.5, "No 'time' column in CSV", ha='center', va='center', fontsize=12)
-    ax2.axis('off')
+    # Left: Index vs Quantized
+    ax1 = plt.subplot(1, 2, 1)
+    ax1.plot(df['Quantized'], marker='o', linestyle='-', markersize=2, color='gray')
+    ax1.set_title("Preview: Index vs Quantized")
+    ax1.set_xlabel("Sample Index")
+    ax1.set_ylabel("Quantized Value (0-255)")
+    ax1.grid(True)
 
-plt.suptitle("Preview of Data to be Transmitted")
-plt.tight_layout()
-plt.show()
+    # Right: Time vs Quantized (if exists)
+    ax2 = plt.subplot(1, 2, 2)
+    if 'time' in df.columns:
+        ax2.plot(df['time'], df['Quantized'], marker='x', linestyle='-', markersize=2, color='purple')
+        ax2.set_title("Preview: Time vs Quantized")
+        ax2.set_xlabel("Time (s)")
+        ax2.set_ylabel("Quantized Value (0-255)")
+        ax2.grid(True)
+    else:
+        ax2.text(0.5, 0.5, "No 'time' column in CSV", ha='center', va='center', fontsize=12)
+        ax2.axis('off')
 
-# Open serial port
-ser = serial.Serial('COM7', baudrate=115200, timeout=1)  # Adjust COM
-print(f"Opened COM7, DTR: {ser.dtr}")
+    plt.suptitle("Preview of Data to be Transmitted")
+    plt.tight_layout()
+    plt.show()
 
-sentDataCounter = 0
-received_values = []
+def transmit_and_receive(port, baudrate, csv_path, receive_enabled=True):
+    df = pd.read_csv(csv_path)
+    tx_data = df['Quantized'].tolist()
 
-# Transmit data and collect received
-try:
-    for value in df['Quantized']:
-        ser.write(bytes([value]))  # Send one byte at a time
-        sentDataCounter += 1
-        # print(f"Sent: {value}")
+    ser = serial.Serial(port, baudrate=baudrate, timeout=1)
+    time.sleep(1)
+    print(f"Opened {port}, DTR: {ser.dtr}")
 
-        # read one byte back (will block up to timeout)
-        received = ser.read(size=1)
+    received = []
+    try:
+        for value in tx_data:
+            ser.write(bytes([value]))
+            time.sleep(TXDELAY)
 
-        if received:
-            rec_val = received[0]
-            received_values.append(rec_val)
-            # print(f"Sent: {value:3d}  → Received: {rec_val:3d}")
-        else:
-            # print(f"Sent: {value:3d}  → No response (timeout)")
-            pass
+            if receive_enabled:
+                rx_byte = ser.read(size=1)
+                if rx_byte:
+                    received.append(rx_byte[0])
+                else:
+                    received.append(None)
 
-        # time.sleep(0.0001)  # Optional delay if needed
+    except KeyboardInterrupt:
+        print("Interrupted by user.")
 
-except KeyboardInterrupt:
-    print(f"Was forced to Quit, sent {sentDataCounter} data.")
+    ser.close()
+    print(f"Transmission complete. Sent {len(tx_data)} bytes.")
 
-print(f"Transmission Completed, sent {sentDataCounter} data.")
-ser.close()
+    if receive_enabled:
+        return tx_data[:len(received)], received
+    else:
+        return tx_data, []
 
-# Save and plot received data and compare with transmitted
-if received_values:
-    output_file = "received_data_plot.csv"
-    pd.DataFrame(received_values, columns=["Received"]).to_csv(output_file, index=False)
-    print(f"Saved received data to {output_file}")
+def plot_tx_rx(tx_data, rx_data):
+    if not rx_data:
+        print("No received data to plot.")
+        return
 
-    # Extract transmitted values
-    transmitted_values = df['Quantized'].tolist()[:len(received_values)]  # Match length
+    rx_data_clean = [v if v is not None else -1 for v in rx_data]
 
-    # Plot both transmitted and received data side by side
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5), sharey=True)
 
-    ax1.plot(transmitted_values, marker='o', linestyle='-', markersize=2, color='blue')
+    ax1.plot(tx_data, marker='o', linestyle='-', markersize=2, color='blue')
     ax1.set_title("Transmitted Data")
     ax1.set_xlabel("Sample Index")
     ax1.set_ylabel("Value (0-255)")
     ax1.grid(True)
 
-    ax2.plot(received_values, marker='x', linestyle='-', markersize=2, color='red')
+    ax2.plot(rx_data_clean, marker='x', linestyle='-', markersize=2, color='red')
     ax2.set_title("Received Data")
     ax2.set_xlabel("Sample Index")
     ax2.grid(True)
@@ -94,3 +90,12 @@ if received_values:
     plt.suptitle("UART Loopback Comparison")
     plt.tight_layout()
     plt.show()
+
+if __name__ == "__main__":
+    csv_file = "./uart_ready_output.csv"
+    port = "COM7"
+    baud = 115200
+
+    #preview_csv_plot(csv_file)
+    tx, rx = transmit_and_receive(port, baud, csv_file, receive_enabled=False)
+    # plot_tx_rx(tx, rx)

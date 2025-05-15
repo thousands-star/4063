@@ -1,12 +1,6 @@
-//=====================================
-// buffer.sv
-// Circular buffer (FIFO) for 8-bit data
-// Supports one writer and one reader
-//=====================================
-
 module buffer #(
-    parameter DEPTH = 256,               // Buffer size (power of 2)
-    parameter ADDR_WIDTH = 8             // log2(DEPTH)
+    parameter DEPTH = 256,
+    parameter ADDR_WIDTH = 8
 )(
     input  logic        clk,
     input  logic        rst,
@@ -22,52 +16,55 @@ module buffer #(
 
     // Status
     output logic        empty,
-    output logic        full
+    output logic        full,
+
+    // Debug pointers
+    output logic [ADDR_WIDTH-1:0] wr_ptr_dbg,
+    output logic [ADDR_WIDTH-1:0] rd_ptr_dbg
 );
 
-    // Buffer storage
+    // Internal memory
     logic [7:0] mem [0:DEPTH-1];
 
-    // Pointers
-    logic [ADDR_WIDTH-1:0] wr_ptr, rd_ptr;
-    logic [ADDR_WIDTH:0]   count; // element counter
+    // Write pointer and counter (for write limit)
+    logic [ADDR_WIDTH-1:0] wr_ptr;
+    logic [ADDR_WIDTH:0]   count;
 
+    // Read pointer (will loop forever)
+    logic [ADDR_WIDTH-1:0] rd_ptr;
+
+    // Debug
+    assign wr_ptr_dbg = wr_ptr;
+    assign rd_ptr_dbg = rd_ptr;
+
+    // ----------------------------
     // Write logic
-    always_ff @(posedge clk) begin
+    // ----------------------------
+    always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             wr_ptr <= 0;
+            count  <= 0;
         end else if (write_en && !full) begin
             mem[wr_ptr] <= write_data;
             wr_ptr <= wr_ptr + 1;
+            count  <= count + 1;
         end
     end
 
-    // Read logic
-    always_ff @(posedge clk) begin
-        if (rst) begin
+    assign full  = (count == DEPTH);
+    assign empty = (count == 0);
+
+    // ----------------------------
+    // Read logic (cyclic)
+    // ----------------------------
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst)
             rd_ptr <= 0;
-        end else if (read_en && !empty) begin
-            rd_ptr <= rd_ptr + 1;
-        end
+        else if (read_en && !empty)
+            rd_ptr <= (rd_ptr == count - 1) ? 0 : rd_ptr + 1;
     end
 
     assign read_data  = mem[rd_ptr];
     assign data_valid = !empty;
-
-    // Count logic
-    always_ff @(posedge clk) begin
-        if (rst) begin
-            count <= 0;
-        end else begin
-            case ({write_en && !full, read_en && !empty})
-                2'b10: count <= count + 1;
-                2'b01: count <= count - 1;
-                default: count <= count;
-            endcase
-        end
-    end
-
-    assign empty = (count == 0);
-    assign full  = (count == DEPTH);
 
 endmodule

@@ -1,76 +1,108 @@
-//==============================
-// Top-level main module
-// Integrates: UART RX + Display + UART TX (no buffer, no audio)
-//==============================
+// ===============================
+// Modified main.sv with buffer test logic
+// ===============================
 module main (
-    input  logic        CLOCK_50,      // 50 MHz Clock
-    input  logic [1:0]  KEY,           // KEY[0] = Reset, KEY[1] = Toggle Display
-    input  logic [8:0]  SW,            // SW[8] = TX Enable
-    input  logic        serial_rx,     // UART RX input
-    input  logic        dtr_n,         // Not used
+    input  logic        CLOCK_50,
+    input  logic [1:0]  KEY,
+    input  logic [8:0]  SW,
+    input  logic        serial_rx,
+    input  logic        dtr_n,
     output logic [6:0]  HEX0,
     output logic [6:0]  HEX1,
     output logic [6:0]  HEX2,
     output logic [6:0]  HEX3,
     output logic [6:0]  HEX4,
     output logic [6:0]  HEX5,
-    output logic [7:0]  LED,           // Status LEDs
-    output logic        serial_tx      // UART TX output
+    output logic [7:0]  LED,
+    output logic        serial_tx
 );
 
-    // UART RX signals
-    logic [7:0]  rx_data;
-    logic        rx_valid;
+    // UART RX
+    logic [7:0] rx_data;
+    logic       rx_valid;
     logic [15:0] recv_count;
 
-    // TX control
-    logic        tx_valid;
-    logic        tx_ready;
+    // Buffer signals
+    logic [7:0] buf_out;
+    logic       buf_valid;
+    logic       buf_empty, buf_full;
+    logic       read_en;
+    logic [8:0] wr_ptr_debug, rd_ptr_debug;  // NEW debug pointers
 
-    // Mode toggle logic (KEY[1])
-    logic show_count_mode;
+    // TX
+    logic       tx_ready;
+
+    // === Mode Toggle ===
+    logic [1:0] show_mode;
     logic key1_prev;
-
     always_ff @(posedge CLOCK_50) begin
         key1_prev <= KEY[1];
-        if (~KEY[1] && key1_prev) begin
-            show_count_mode <= ~show_count_mode;
-        end
+        if (~KEY[1] && key1_prev)
+            show_mode <= show_mode + 1;
     end
 
-    // UART RX instance
+    // === UART RX Instance ===
     uart_rxv2 #(
         .CLK_FREQ(50_000_000),
         .BAUD(100000)
     ) u_rx (
-        .clk(CLOCK_50),
-        .rst(~KEY[0]),
-        .serial_rx(serial_rx),
-        .data_out(rx_data),
-        .data_valid(rx_valid),
-        .recv_count(recv_count)
+        .clk        (CLOCK_50),
+        .rst        (~KEY[0]),
+        .serial_rx  (serial_rx),
+        .data_out   (rx_data),
+        .data_valid (rx_valid),
+        .recv_count (recv_count)
     );
+	 
+	 // === caching buffer ===
 
-    // UART TX directly from rx_data
-    assign tx_valid = rx_valid & SW[8];
+	buffer #(
+		 .DEPTH(512),
+		 .ADDR_WIDTH(9)  // log2(512) = 9
+	) u_buffer (
+		 .clk         (CLOCK_50),
+		 .rst         (~KEY[0]),
+		 .write_en    (rx_valid),
+		 .write_data  (rx_data),
+		 .read_en     (read_en),
+		 .read_data   (buf_out),
+		 .data_valid  (buf_valid),
+		 .empty       (buf_empty),
+		 .full        (buf_full),
+		 .wr_ptr_dbg  (wr_ptr_debug),
+		 .rd_ptr_dbg  (rd_ptr_debug)
+	);
+	
+	
+    assign read_en = tx_ready;
+
+    // === UART TX ===
+    logic tx_valid;
+    assign tx_valid = SW[8];
 
     uart_tx #(
         .CLK_FREQ(50_000_000),
         .BAUD(100000)
     ) u_tx (
-        .clk       (CLOCK_50),
-        .rst       (~KEY[0]),
-        .tx_data   (rx_data),
-        .tx_valid  (tx_valid),
-        .tx_ready  (tx_ready),
-        .serial_tx (serial_tx)
+        .clk        (CLOCK_50),
+        .rst        (~KEY[0]),
+        .tx_data    (buf_out),
+        .tx_valid   (tx_valid),
+        .tx_ready   (tx_ready),
+        .serial_tx  (serial_tx)
     );
 
-    // Display value selection
+    // === Display ===
     logic [23:0] display_val;
-    assign display_val = show_count_mode ? {8'd0, recv_count} : {16'd0, rx_data};
+    always_comb begin
+        case (show_mode)
+            2'd0: display_val = {8'd0, recv_count};         // show RX counter
+            2'd1: display_val = {15'd0, wr_ptr_debug};      // show wr_ptr
+            2'd2: display_val = {15'd0, rd_ptr_debug};      // show rd_ptr
+            default: display_val = 15'd030314;              // debug fallback
+        endcase
+    end
 
-    // Decimal digit extraction
     logic [3:0] digit0, digit1, digit2, digit3, digit4, digit5;
 
     hex_display u_disp (
@@ -83,7 +115,6 @@ module main (
         .digit0(digit0)
     );
 
-    // HEX decoders
     hex_decoder h0 (.bin(digit0), .seg(HEX0));
     hex_decoder h1 (.bin(digit1), .seg(HEX1));
     hex_decoder h2 (.bin(digit2), .seg(HEX2));
@@ -91,15 +122,13 @@ module main (
     hex_decoder h4 (.bin(digit4), .seg(HEX4));
     hex_decoder h5 (.bin(digit5), .seg(HEX5));
 
-    // Status LED indicators
-    // LED[0] = RX Active
-    // LED[1] = (unused)
-    // LED[2] = TX Active
-    // LED[3] = TX Enable (SW[8])
+    // === LED ===
     assign LED[0] = rx_valid;
-    assign LED[1] = 1'b0;
+    assign LED[1] = buf_valid;
     assign LED[2] = tx_valid;
-    assign LED[3] = SW[8];
-    assign LED[7:4] = 4'b0000;
+    assign LED[3] = tx_ready;
+    assign LED[4] = buf_empty;
+    assign LED[5] = buf_full;
+    assign LED[7:6] = 2'b00;
 
 endmodule
