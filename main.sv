@@ -1,11 +1,11 @@
 //==============================
 // Top-level main module
-// Integrates: UART RX + Display + Buffer + Audio generator + UART TX
+// Integrates: UART RX + Display + UART TX (no buffer, no audio)
 //==============================
 module main (
     input  logic        CLOCK_50,      // 50 MHz Clock
-    input  logic [1:0]  KEY,           // KEY[0] = Reset, KEY[1] = Toggle Display / Volume Control
-    input  logic [8:0]  SW,            // SW[2] = Audio Reset, SW[1:0] = waveform_sel
+    input  logic [1:0]  KEY,           // KEY[0] = Reset, KEY[1] = Toggle Display
+    input  logic [8:0]  SW,            // SW[8] = TX Enable
     input  logic        serial_rx,     // UART RX input
     input  logic        dtr_n,         // Not used
     output logic [6:0]  HEX0,
@@ -14,8 +14,7 @@ module main (
     output logic [6:0]  HEX3,
     output logic [6:0]  HEX4,
     output logic [6:0]  HEX5,
-    output logic [7:0]  LED,           // Display output value
-    output logic        GPIO_9,        // Audio PWM out
+    output logic [7:0]  LED,           // Status LEDs
     output logic        serial_tx      // UART TX output
 );
 
@@ -23,15 +22,6 @@ module main (
     logic [7:0]  rx_data;
     logic        rx_valid;
     logic [15:0] recv_count;
-
-    // Buffer signals
-    logic        write_en;
-    logic [7:0]  write_data;
-    logic        read_en;
-    logic [7:0]  read_data;
-    logic        buffer_valid;
-    logic        buffer_empty;
-    logic        buffer_full;
 
     // TX control
     logic        tx_valid;
@@ -61,28 +51,8 @@ module main (
         .recv_count(recv_count)
     );
 
-    // Buffer write
-    assign write_en   = rx_valid;
-    assign write_data = rx_data;
-
-    buffer #(
-        .DEPTH(2048),
-        .ADDR_WIDTH(11)
-    ) buffer (
-        .clk        (CLOCK_50),
-        .rst        (~KEY[0]),
-        .write_en   (write_en),
-        .write_data (write_data),
-        .read_en    (read_en),
-        .read_data  (read_data),
-        .data_valid (buffer_valid),
-        .empty      (buffer_empty),
-        .full       (buffer_full)
-    );
-
-    // UART TX instance (blast data from buffer)
-    assign tx_valid = ~buffer_empty & tx_ready;
-    assign read_en  = tx_valid;
+    // UART TX directly from rx_data
+    assign tx_valid = rx_valid & SW[8];
 
     uart_tx #(
         .CLK_FREQ(50_000_000),
@@ -90,7 +60,7 @@ module main (
     ) u_tx (
         .clk       (CLOCK_50),
         .rst       (~KEY[0]),
-        .tx_data   (read_data),
+        .tx_data   (rx_data),
         .tx_valid  (tx_valid),
         .tx_ready  (tx_ready),
         .serial_tx (serial_tx)
@@ -121,7 +91,15 @@ module main (
     hex_decoder h4 (.bin(digit4), .seg(HEX4));
     hex_decoder h5 (.bin(digit5), .seg(HEX5));
 
-    assign LED = display_val[7:0];
-
+    // Status LED indicators
+    // LED[0] = RX Active
+    // LED[1] = (unused)
+    // LED[2] = TX Active
+    // LED[3] = TX Enable (SW[8])
+    assign LED[0] = rx_valid;
+    assign LED[1] = 1'b0;
+    assign LED[2] = tx_valid;
+    assign LED[3] = SW[8];
+    assign LED[7:4] = 4'b0000;
 
 endmodule

@@ -1,5 +1,5 @@
 Flow report for proj
-Thu May 15 12:19:39 2025
+Thu May 15 15:20:57 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu May 15 12:19:36 2025       ;
+; Flow Status                        ; Successful - Thu May 15 15:20:54 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; proj                                        ;
 ; Top-level Entity Name              ; main                                        ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,089 / 49,760 ( 2 % )                      ;
-;     Total combinational functions  ; 1,066 / 49,760 ( 2 % )                      ;
-;     Dedicated logic registers      ; 175 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 175                                         ;
-; Total pins                         ; 66 / 360 ( 18 % )                           ;
+; Total logic elements               ; 1,002 / 49,760 ( 2 % )                      ;
+;     Total combinational functions  ; 994 / 49,760 ( 2 % )                        ;
+;     Dedicated logic registers      ; 109 / 49,760 ( < 1 % )                      ;
+; Total registers                    ; 109                                         ;
+; Total pins                         ; 65 / 360 ( 18 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 16,384 / 1,677,312 ( < 1 % )                ;
+; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/15/2025 12:19:07 ;
+; Start date & time ; 05/15/2025 15:20:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; proj                ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 114874873213807.174728274725004        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 114874873213807.174729363106780        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; main        ; Top        ;
@@ -95,11 +95,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4847 MB             ; 00:00:11                           ;
-; Fitter               ; 00:00:10     ; 1.2                     ; 5933 MB             ; 00:00:06                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4688 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.5                     ; 4882 MB             ; 00:00:01                           ;
-; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:19                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4840 MB             ; 00:00:06                           ;
+; Fitter               ; 00:00:08     ; 1.2                     ; 5933 MB             ; 00:00:06                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4690 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.5                     ; 4879 MB             ; 00:00:01                           ;
+; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:14                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
