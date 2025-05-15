@@ -17,7 +17,7 @@ module main (
     output logic        serial_tx
 );
 
-    // UART RX
+    // UART RX signals
     logic [7:0] rx_data;
     logic       rx_valid;
     logic [15:0] recv_count;
@@ -32,7 +32,7 @@ module main (
     // TX
     logic       tx_ready;
 
-    // === Mode Toggle ===
+    // === Mode Toggle Logic ===
     logic [1:0] show_mode;
     logic key1_prev;
     always_ff @(posedge CLOCK_50) begin
@@ -54,6 +54,57 @@ module main (
         .recv_count (recv_count)
     );
 	 
+	 
+	 // === MA Filter Integration ===
+    logic [7:0] filtered_data;
+    logic       filter_valid;
+
+    ma_filter #(
+        .WIDTH(8),
+        .DEPTH(5)
+    ) u_ma (
+        .clk        (CLOCK_50),
+        .rst        (~KEY[0]),
+        .in_data    (rx_data),
+        .in_valid   (rx_valid),
+        .out_data   (filtered_data),
+        .out_valid  (filter_valid)
+    );
+    
+    // === FIR Filter Integration ===
+    logic [7:0] fir_data;
+    logic       fir_valid;
+
+    fir_filter #(
+        .WIDTH(8),
+        .DEPTH(20)
+    ) u_fir (
+        .clk        (CLOCK_50),
+        .rst        (~KEY[0]),
+        .in_data    (rx_data),
+        .in_valid   (rx_valid),
+        .out_data   (fir_data),
+        .out_valid  (fir_valid)
+    );
+    
+
+    logic [7:0] buff_in;
+	 logic       in_valid;
+
+	 always_comb begin
+		 if (SW[7]) begin
+			  buff_in    = filtered_data;
+			  in_valid = filter_valid;
+		 end else if (SW[6]) begin
+			  buff_in    = fir_data;
+			  in_valid = fir_valid;
+		 end else begin
+			  buff_in    = rx_data;
+			  in_valid = rx_valid;
+		 end
+	 end
+
+	 
 	 // === caching buffer ===
 
 	buffer #(
@@ -62,8 +113,8 @@ module main (
 	) u_buffer (
 		 .clk         (CLOCK_50),
 		 .rst         (~KEY[0]),
-		 .write_en    (rx_valid),
-		 .write_data  (rx_data),
+		 .write_en    (in_valid),
+		 .write_data  (buff_in),
 		 .read_en     (read_en),
 		 .read_data   (buf_out),
 		 .data_valid  (buf_valid),
@@ -74,9 +125,8 @@ module main (
 	);
 	
 	
-    assign read_en = tx_ready;
-
     // === UART TX ===
+	 assign read_en = tx_ready;
     logic tx_valid;
     assign tx_valid = SW[8];
 
@@ -122,7 +172,7 @@ module main (
     hex_decoder h4 (.bin(digit4), .seg(HEX4));
     hex_decoder h5 (.bin(digit5), .seg(HEX5));
 
-    // === LED ===
+    // === LED status register ===
     assign LED[0] = rx_valid;
     assign LED[1] = buf_valid;
     assign LED[2] = tx_valid;

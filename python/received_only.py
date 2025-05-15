@@ -30,7 +30,7 @@ def receive_data(port, baudrate, num_bytes=256, timeout=1):
 
 def plot_received_data(data):
     plt.figure(figsize=(10, 4))
-    plt.plot(data, marker='x', linestyle='-', color='red')
+    plt.plot(data, linestyle='-', color='red')
     plt.title("Received UART Data")
     plt.xlabel("Sample Index")
     plt.ylabel("Value (0-255)")
@@ -46,7 +46,7 @@ def save_to_csv(data, filename="received_only_output.csv"):
 if __name__ == "__main__":
     port = "COM7"
     baud = 115200
-    num_bytes = 1024  # Adjust as needed
+    num_bytes = 512  # Adjust as needed
 
     data = receive_data(port, baud, num_bytes=num_bytes)
     save_to_csv(data)
