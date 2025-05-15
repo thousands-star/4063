@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("D:/YeeXun/ECE4063/proj/output_files/") File("proj.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("D:/YeeXun/ECE4063/4063proj/output_files/") File("proj.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

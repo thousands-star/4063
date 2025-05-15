@@ -1,5 +1,5 @@
 Analysis & Synthesis report for proj
-Thu May 15 09:30:06 2025
+Thu May 15 10:32:33 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -20,12 +20,18 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  12. Parameter Settings for User Entity Instance: uart_rxv2:u_rx
  13. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod0
  14. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod1
- 15. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div1
- 16. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div0
- 17. Port Connectivity Checks: "uart_rxv2:u_rx"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 15. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod2
+ 16. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod3
+ 17. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod4
+ 18. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div4
+ 19. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div3
+ 20. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div2
+ 21. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div1
+ 22. Port Connectivity Checks: "hex_display:u_disp"
+ 23. Port Connectivity Checks: "uart_rxv2:u_rx"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -51,16 +57,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 15 09:30:06 2025       ;
+; Analysis & Synthesis Status        ; Successful - Thu May 15 10:32:33 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; proj                                        ;
 ; Top-level Entity Name              ; uart_rx_top                                 ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 292                                         ;
-;     Total combinational functions  ; 290                                         ;
-;     Dedicated logic registers      ; 58                                          ;
-; Total registers                    ; 58                                          ;
-; Total pins                         ; 35                                          ;
+; Total logic elements               ; 943                                         ;
+;     Total combinational functions  ; 940                                         ;
+;     Dedicated logic registers      ; 76                                          ;
+; Total registers                    ; 76                                          ;
+; Total pins                         ; 56                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -178,24 +184,35 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
-; uart_rxv2.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/proj/uart_rxv2.sv                                        ;         ;
-; uart_rx_top.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/proj/uart_rx_top.sv                                      ;         ;
-; hex_display.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/proj/hex_display.sv                                      ;         ;
-; hex_decoder.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/proj/hex_decoder.sv                                      ;         ;
+; uart_rxv2.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv                                    ;         ;
+; uart_rx_top.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv                                  ;         ;
+; hex_display.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/4063proj/hex_display.sv                                  ;         ;
+; hex_decoder.sv                   ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/4063proj/hex_decoder.sv                                  ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
 ; aglobal181.inc                   ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc      ;         ;
-; db/lpm_divide_fkl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/proj/db/lpm_divide_fkl.tdf                               ;         ;
-; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/proj/db/sign_div_unsign_ekh.tdf                          ;         ;
-; db/alt_u_div_6fe.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/proj/db/alt_u_div_6fe.tdf                                ;         ;
-; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/proj/db/add_sub_t3c.tdf                                  ;         ;
-; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/proj/db/add_sub_u3c.tdf                                  ;         ;
-; db/lpm_divide_bkl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/proj/db/lpm_divide_bkl.tdf                               ;         ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/proj/db/sign_div_unsign_akh.tdf                          ;         ;
-; db/alt_u_div_uee.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/proj/db/alt_u_div_uee.tdf                                ;         ;
-; db/lpm_divide_8sl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/proj/db/lpm_divide_8sl.tdf                               ;         ;
-; db/lpm_divide_csl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/proj/db/lpm_divide_csl.tdf                               ;         ;
+; db/lpm_divide_enl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/lpm_divide_enl.tdf                           ;         ;
+; db/sign_div_unsign_dnh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/sign_div_unsign_dnh.tdf                      ;         ;
+; db/alt_u_div_4le.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/alt_u_div_4le.tdf                            ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/add_sub_t3c.tdf                              ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/add_sub_u3c.tdf                              ;         ;
+; db/lpm_divide_dnl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/lpm_divide_dnl.tdf                           ;         ;
+; db/sign_div_unsign_cnh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/sign_div_unsign_cnh.tdf                      ;         ;
+; db/alt_u_div_2le.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/alt_u_div_2le.tdf                            ;         ;
+; db/lpm_divide_6nl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/lpm_divide_6nl.tdf                           ;         ;
+; db/sign_div_unsign_5nh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/sign_div_unsign_5nh.tdf                      ;         ;
+; db/alt_u_div_kke.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/alt_u_div_kke.tdf                            ;         ;
+; db/lpm_divide_oll.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/lpm_divide_oll.tdf                           ;         ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/sign_div_unsign_nlh.tdf                      ;         ;
+; db/alt_u_div_ohe.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/alt_u_div_ohe.tdf                            ;         ;
+; db/lpm_divide_bkl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/lpm_divide_bkl.tdf                           ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/sign_div_unsign_akh.tdf                      ;         ;
+; db/alt_u_div_uee.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/alt_u_div_uee.tdf                            ;         ;
+; db/lpm_divide_8sl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/lpm_divide_8sl.tdf                           ;         ;
+; db/lpm_divide_ltl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/lpm_divide_ltl.tdf                           ;         ;
+; db/lpm_divide_3vl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/lpm_divide_3vl.tdf                           ;         ;
+; db/lpm_divide_avl.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/YeeXun/ECE4063/4063proj/db/lpm_divide_avl.tdf                           ;         ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
@@ -204,30 +221,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 292       ;
+; Estimated Total logic elements              ; 943       ;
 ;                                             ;           ;
-; Total combinational functions               ; 290       ;
+; Total combinational functions               ; 940       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 101       ;
-;     -- 3 input functions                    ; 51        ;
-;     -- <=2 input functions                  ; 138       ;
+;     -- 4 input functions                    ; 301       ;
+;     -- 3 input functions                    ; 241       ;
+;     -- <=2 input functions                  ; 398       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 208       ;
-;     -- arithmetic mode                      ; 82        ;
+;     -- normal mode                          ; 675       ;
+;     -- arithmetic mode                      ; 265       ;
 ;                                             ;           ;
-; Total registers                             ; 58        ;
-;     -- Dedicated logic registers            ; 58        ;
+; Total registers                             ; 76        ;
+;     -- Dedicated logic registers            ; 76        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 35        ;
+; I/O pins                                    ; 56        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 58        ;
-; Total fan-out                               ; 1024      ;
-; Average fan-out                             ; 2.45      ;
+; Maximum fan-out                             ; 76        ;
+; Total fan-out                               ; 2983      ;
+; Average fan-out                             ; 2.63      ;
 +---------------------------------------------+-----------+
 
 
@@ -236,28 +253,46 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                             ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |uart_rx_top                              ; 290 (0)             ; 58 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 35   ; 0            ; 0          ; |uart_rx_top                                                                                                                    ; uart_rx_top         ; work         ;
+; |uart_rx_top                              ; 940 (17)            ; 76 (2)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 56   ; 0            ; 0          ; |uart_rx_top                                                                                                                    ; uart_rx_top         ; work         ;
 ;    |hex_decoder:h0|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_decoder:h0                                                                                                     ; hex_decoder         ; work         ;
 ;    |hex_decoder:h1|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_decoder:h1                                                                                                     ; hex_decoder         ; work         ;
-;    |hex_decoder:h2|                       ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_decoder:h2                                                                                                     ; hex_decoder         ; work         ;
-;    |hex_display:u_disp|                   ; 164 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp                                                                                                 ; hex_display         ; work         ;
-;       |lpm_divide:Div0|                   ; 25 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_csl:auto_generated|  ; 25 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div0|lpm_divide_csl:auto_generated                                                   ; lpm_divide_csl      ; work         ;
-;             |sign_div_unsign_ekh:divider| ; 25 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div0|lpm_divide_csl:auto_generated|sign_div_unsign_ekh:divider                       ; sign_div_unsign_ekh ; work         ;
-;                |alt_u_div_6fe:divider|    ; 25 (25)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div0|lpm_divide_csl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_6fe:divider ; alt_u_div_6fe       ; work         ;
-;       |lpm_divide:Div1|                   ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_8sl:auto_generated|  ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div1|lpm_divide_8sl:auto_generated                                                   ; lpm_divide_8sl      ; work         ;
-;             |sign_div_unsign_akh:divider| ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div1|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
-;                |alt_u_div_uee:divider|    ; 46 (46)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div1|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_uee:divider ; alt_u_div_uee       ; work         ;
-;       |lpm_divide:Mod0|                   ; 42 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_fkl:auto_generated|  ; 42 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod0|lpm_divide_fkl:auto_generated                                                   ; lpm_divide_fkl      ; work         ;
-;             |sign_div_unsign_ekh:divider| ; 42 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod0|lpm_divide_fkl:auto_generated|sign_div_unsign_ekh:divider                       ; sign_div_unsign_ekh ; work         ;
-;                |alt_u_div_6fe:divider|    ; 42 (42)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod0|lpm_divide_fkl:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_6fe:divider ; alt_u_div_6fe       ; work         ;
-;       |lpm_divide:Mod1|                   ; 51 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_bkl:auto_generated|  ; 51 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod1|lpm_divide_bkl:auto_generated                                                   ; lpm_divide_bkl      ; work         ;
-;             |sign_div_unsign_akh:divider| ; 51 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod1|lpm_divide_bkl:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
-;                |alt_u_div_uee:divider|    ; 51 (51)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod1|lpm_divide_bkl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_uee:divider ; alt_u_div_uee       ; work         ;
-;    |uart_rxv2:u_rx|                       ; 109 (109)           ; 58 (58)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|uart_rxv2:u_rx                                                                                                     ; uart_rxv2           ; work         ;
+;    |hex_decoder:h2|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_decoder:h2                                                                                                     ; hex_decoder         ; work         ;
+;    |hex_decoder:h3|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_decoder:h3                                                                                                     ; hex_decoder         ; work         ;
+;    |hex_decoder:h4|                       ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_decoder:h4                                                                                                     ; hex_decoder         ; work         ;
+;    |hex_display:u_disp|                   ; 755 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp                                                                                                 ; hex_display         ; work         ;
+;       |lpm_divide:Div1|                   ; 83 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_avl:auto_generated|  ; 83 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div1|lpm_divide_avl:auto_generated                                                   ; lpm_divide_avl      ; work         ;
+;             |sign_div_unsign_cnh:divider| ; 83 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div1|lpm_divide_avl:auto_generated|sign_div_unsign_cnh:divider                       ; sign_div_unsign_cnh ; work         ;
+;                |alt_u_div_2le:divider|    ; 83 (83)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div1|lpm_divide_avl:auto_generated|sign_div_unsign_cnh:divider|alt_u_div_2le:divider ; alt_u_div_2le       ; work         ;
+;       |lpm_divide:Div2|                   ; 127 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_3vl:auto_generated|  ; 127 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div2|lpm_divide_3vl:auto_generated                                                   ; lpm_divide_3vl      ; work         ;
+;             |sign_div_unsign_5nh:divider| ; 127 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div2|lpm_divide_3vl:auto_generated|sign_div_unsign_5nh:divider                       ; sign_div_unsign_5nh ; work         ;
+;                |alt_u_div_kke:divider|    ; 127 (127)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div2|lpm_divide_3vl:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_kke:divider ; alt_u_div_kke       ; work         ;
+;       |lpm_divide:Div3|                   ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div3                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_ltl:auto_generated|  ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div3|lpm_divide_ltl:auto_generated                                                   ; lpm_divide_ltl      ; work         ;
+;             |sign_div_unsign_nlh:divider| ; 72 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div3|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;                |alt_u_div_ohe:divider|    ; 72 (72)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div3|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_ohe:divider ; alt_u_div_ohe       ; work         ;
+;       |lpm_divide:Div4|                   ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div4                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_8sl:auto_generated|  ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div4|lpm_divide_8sl:auto_generated                                                   ; lpm_divide_8sl      ; work         ;
+;             |sign_div_unsign_akh:divider| ; 46 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div4|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                |alt_u_div_uee:divider|    ; 46 (46)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Div4|lpm_divide_8sl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_uee:divider ; alt_u_div_uee       ; work         ;
+;       |lpm_divide:Mod1|                   ; 126 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_dnl:auto_generated|  ; 126 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod1|lpm_divide_dnl:auto_generated                                                   ; lpm_divide_dnl      ; work         ;
+;             |sign_div_unsign_cnh:divider| ; 126 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod1|lpm_divide_dnl:auto_generated|sign_div_unsign_cnh:divider                       ; sign_div_unsign_cnh ; work         ;
+;                |alt_u_div_2le:divider|    ; 126 (126)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod1|lpm_divide_dnl:auto_generated|sign_div_unsign_cnh:divider|alt_u_div_2le:divider ; alt_u_div_2le       ; work         ;
+;       |lpm_divide:Mod2|                   ; 159 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_6nl:auto_generated|  ; 159 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod2|lpm_divide_6nl:auto_generated                                                   ; lpm_divide_6nl      ; work         ;
+;             |sign_div_unsign_5nh:divider| ; 159 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod2|lpm_divide_6nl:auto_generated|sign_div_unsign_5nh:divider                       ; sign_div_unsign_5nh ; work         ;
+;                |alt_u_div_kke:divider|    ; 159 (159)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod2|lpm_divide_6nl:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_kke:divider ; alt_u_div_kke       ; work         ;
+;       |lpm_divide:Mod3|                   ; 91 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_oll:auto_generated|  ; 91 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod3|lpm_divide_oll:auto_generated                                                   ; lpm_divide_oll      ; work         ;
+;             |sign_div_unsign_nlh:divider| ; 91 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod3|lpm_divide_oll:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;                |alt_u_div_ohe:divider|    ; 91 (91)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod3|lpm_divide_oll:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_ohe:divider ; alt_u_div_ohe       ; work         ;
+;       |lpm_divide:Mod4|                   ; 51 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod4                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_bkl:auto_generated|  ; 51 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod4|lpm_divide_bkl:auto_generated                                                   ; lpm_divide_bkl      ; work         ;
+;             |sign_div_unsign_akh:divider| ; 51 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod4|lpm_divide_bkl:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;                |alt_u_div_uee:divider|    ; 51 (51)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|hex_display:u_disp|lpm_divide:Mod4|lpm_divide_bkl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_uee:divider ; alt_u_div_uee       ; work         ;
+;    |uart_rxv2:u_rx|                       ; 133 (133)           ; 74 (74)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |uart_rx_top|uart_rxv2:u_rx                                                                                                     ; uart_rxv2           ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -291,12 +326,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 58    ;
-; Number of registers using Synchronous Clear  ; 29    ;
+; Total registers                              ; 76    ;
+; Number of registers using Synchronous Clear  ; 45    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Clock Enable       ; 24    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -306,9 +341,10 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |uart_rx_top|uart_rxv2:u_rx|rx_latch[3]     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |uart_rx_top|uart_rxv2:u_rx|watchdog_cnt[9] ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |uart_rx_top|uart_rxv2:u_rx|baud_cnt[7]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |uart_rx_top|uart_rxv2:u_rx|rx_latch[1]     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |uart_rx_top|uart_rxv2:u_rx|recv_count[11]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |uart_rx_top|uart_rxv2:u_rx|watchdog_cnt[4] ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |uart_rx_top|uart_rxv2:u_rx|baud_cnt[10]    ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |uart_rx_top|uart_rxv2:u_rx|bit_cnt         ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |uart_rx_top|uart_rxv2:u_rx|state           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
@@ -330,14 +366,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+-------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                      ;
 +------------------------+----------------+-------------------------------------------+
-; LPM_WIDTHN             ; 8              ; Untyped                                   ;
-; LPM_WIDTHD             ; 7              ; Untyped                                   ;
+; LPM_WIDTHN             ; 24             ; Untyped                                   ;
+; LPM_WIDTHD             ; 17             ; Untyped                                   ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                   ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
-; CBXI_PARAMETER         ; lpm_divide_fkl ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_enl ; Untyped                                   ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
@@ -350,6 +386,75 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod1 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 17             ; Untyped                                   ;
+; LPM_WIDTHD             ; 14             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_dnl ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod2 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                   ;
+; LPM_WIDTHD             ; 10             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_6nl ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod3 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                   ;
+; LPM_WIDTHD             ; 7              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_oll ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod4 ;
 +------------------------+----------------+-------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                      ;
 +------------------------+----------------+-------------------------------------------+
@@ -372,7 +477,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div1 ;
+; Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div4 ;
 +------------------------+----------------+-------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                      ;
 +------------------------+----------------+-------------------------------------------+
@@ -395,18 +500,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div0 ;
+; Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div3 ;
 +------------------------+----------------+-------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                      ;
 +------------------------+----------------+-------------------------------------------+
-; LPM_WIDTHN             ; 8              ; Untyped                                   ;
+; LPM_WIDTHN             ; 10             ; Untyped                                   ;
 ; LPM_WIDTHD             ; 7              ; Untyped                                   ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
 ; LPM_PIPELINE           ; 0              ; Untyped                                   ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
-; CBXI_PARAMETER         ; lpm_divide_csl ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_ltl ; Untyped                                   ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
@@ -415,6 +520,61 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
 +------------------------+----------------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div2 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                   ;
+; LPM_WIDTHD             ; 10             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_3vl ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div1 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 17             ; Untyped                                   ;
+; LPM_WIDTHD             ; 14             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_avl ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "hex_display:u_disp" ;
++-------------+-------+----------+---------------+
+; Port        ; Type  ; Severity ; Details       ;
++-------------+-------+----------+---------------+
+; bin[23..16] ; Input ; Info     ; Stuck at GND  ;
++-------------+-------+----------+---------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -431,24 +591,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 35                          ;
-; cycloneiii_ff         ; 58                          ;
+; boundary_port         ; 56                          ;
+; cycloneiii_ff         ; 76                          ;
 ;     ENA               ; 8                           ;
+;     ENA SCLR          ; 16                          ;
 ;     SCLR              ; 29                          ;
-;     plain             ; 21                          ;
-; cycloneiii_lcell_comb ; 294                         ;
-;     arith             ; 82                          ;
-;         2 data inputs ; 40                          ;
+;     plain             ; 23                          ;
+; cycloneiii_lcell_comb ; 955                         ;
+;     arith             ; 265                         ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 64                          ;
+;         3 data inputs ; 199                         ;
+;     normal            ; 690                         ;
+;         0 data inputs ; 34                          ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 297                         ;
 ;         3 data inputs ; 42                          ;
-;     normal            ; 212                         ;
-;         0 data inputs ; 13                          ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 84                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 101                         ;
+;         4 data inputs ; 301                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 16.60                       ;
-; Average LUT depth     ; 9.23                        ;
+; Max LUT depth         ; 46.00                       ;
+; Average LUT depth     ; 30.14                       ;
 +-----------------------+-----------------------------+
 
 
@@ -457,7 +619,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -467,97 +629,175 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu May 15 09:29:58 2025
+    Info: Processing started: Thu May 15 10:32:19 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proj -c proj
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file uart_rxv2.sv
-    Info (12023): Found entity 1: uart_rxv2 File: D:/YeeXun/ECE4063/proj/uart_rxv2.sv Line: 1
+    Info (12023): Found entity 1: uart_rxv2 File: D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file uart_rx_top.sv
-    Info (12023): Found entity 1: uart_rx_top File: D:/YeeXun/ECE4063/proj/uart_rx_top.sv Line: 1
+    Info (12023): Found entity 1: uart_rx_top File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file hex_display.sv
-    Info (12023): Found entity 1: hex_display File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 1
+    Info (12023): Found entity 1: hex_display File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file hex_decoder.sv
-    Info (12023): Found entity 1: hex_decoder File: D:/YeeXun/ECE4063/proj/hex_decoder.sv Line: 1
+    Info (12023): Found entity 1: hex_decoder File: D:/YeeXun/ECE4063/4063proj/hex_decoder.sv Line: 1
 Info (12127): Elaborating entity "uart_rx_top" for the top level hierarchy
-Info (12128): Elaborating entity "uart_rxv2" for hierarchy "uart_rxv2:u_rx" File: D:/YeeXun/ECE4063/proj/uart_rx_top.sv Line: 28
-Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(51): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/proj/uart_rxv2.sv Line: 51
-Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(74): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/proj/uart_rxv2.sv Line: 74
-Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(86): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/proj/uart_rxv2.sv Line: 86
-Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(89): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/proj/uart_rxv2.sv Line: 89
-Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(102): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/proj/uart_rxv2.sv Line: 102
-Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:u_disp" File: D:/YeeXun/ECE4063/proj/uart_rx_top.sv Line: 38
-Warning (10230): Verilog HDL assignment warning at hex_display.sv(12): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 12
-Warning (10230): Verilog HDL assignment warning at hex_display.sv(13): truncated value with size 32 to match size of target (8) File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 13
-Warning (10230): Verilog HDL assignment warning at hex_display.sv(14): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 14
-Warning (10230): Verilog HDL assignment warning at hex_display.sv(15): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 15
-Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:h0" File: D:/YeeXun/ECE4063/proj/uart_rx_top.sv Line: 41
-Info (278001): Inferred 4 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Mod0" File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 13
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Mod1" File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 15
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Div1" File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 14
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Div0" File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 12
-Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Mod0" File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 13
-Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Mod0" with the following parameter: File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 13
-    Info (12134): Parameter "LPM_WIDTHN" = "8"
+Info (12128): Elaborating entity "uart_rxv2" for hierarchy "uart_rxv2:u_rx" File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 44
+Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(52): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv Line: 52
+Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(75): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv Line: 75
+Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(87): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv Line: 87
+Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(90): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv Line: 90
+Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(100): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv Line: 100
+Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(104): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv Line: 104
+Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:u_disp" File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 60
+Warning (10230): Verilog HDL assignment warning at hex_display.sv(16): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 16
+Warning (10230): Verilog HDL assignment warning at hex_display.sv(17): truncated value with size 32 to match size of target (24) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 17
+Warning (10230): Verilog HDL assignment warning at hex_display.sv(19): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 19
+Warning (10230): Verilog HDL assignment warning at hex_display.sv(20): truncated value with size 32 to match size of target (24) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 20
+Warning (10230): Verilog HDL assignment warning at hex_display.sv(22): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 22
+Warning (10230): Verilog HDL assignment warning at hex_display.sv(23): truncated value with size 32 to match size of target (24) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 23
+Warning (10230): Verilog HDL assignment warning at hex_display.sv(25): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at hex_display.sv(26): truncated value with size 32 to match size of target (24) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at hex_display.sv(28): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 28
+Warning (10230): Verilog HDL assignment warning at hex_display.sv(29): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 29
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:h0" File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 63
+Info (278001): Inferred 9 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Mod0" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 17
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Mod1" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 20
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Mod2" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 23
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Mod3" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 26
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Mod4" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 29
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Div4" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 28
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Div3" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Div2" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 22
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Div1" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 19
+Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Mod0" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 17
+Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Mod0" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 17
+    Info (12134): Parameter "LPM_WIDTHN" = "24"
+    Info (12134): Parameter "LPM_WIDTHD" = "17"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_enl.tdf
+    Info (12023): Found entity 1: lpm_divide_enl File: D:/YeeXun/ECE4063/4063proj/db/lpm_divide_enl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dnh File: D:/YeeXun/ECE4063/4063proj/db/sign_div_unsign_dnh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_4le.tdf
+    Info (12023): Found entity 1: alt_u_div_4le File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_4le.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: D:/YeeXun/ECE4063/4063proj/db/add_sub_t3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: D:/YeeXun/ECE4063/4063proj/db/add_sub_u3c.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Mod1" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 20
+Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Mod1" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 20
+    Info (12134): Parameter "LPM_WIDTHN" = "17"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_dnl.tdf
+    Info (12023): Found entity 1: lpm_divide_dnl File: D:/YeeXun/ECE4063/4063proj/db/lpm_divide_dnl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_cnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_cnh File: D:/YeeXun/ECE4063/4063proj/db/sign_div_unsign_cnh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_2le.tdf
+    Info (12023): Found entity 1: alt_u_div_2le File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_2le.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Mod2" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 23
+Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Mod2" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 23
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6nl.tdf
+    Info (12023): Found entity 1: lpm_divide_6nl File: D:/YeeXun/ECE4063/4063proj/db/lpm_divide_6nl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_5nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_5nh File: D:/YeeXun/ECE4063/4063proj/db/sign_div_unsign_5nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kke.tdf
+    Info (12023): Found entity 1: alt_u_div_kke File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_kke.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Mod3" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 26
+Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Mod3" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 26
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fkl.tdf
-    Info (12023): Found entity 1: lpm_divide_fkl File: D:/YeeXun/ECE4063/proj/db/lpm_divide_fkl.tdf Line: 24
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ekh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_ekh File: D:/YeeXun/ECE4063/proj/db/sign_div_unsign_ekh.tdf Line: 24
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6fe.tdf
-    Info (12023): Found entity 1: alt_u_div_6fe File: D:/YeeXun/ECE4063/proj/db/alt_u_div_6fe.tdf Line: 26
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
-    Info (12023): Found entity 1: add_sub_t3c File: D:/YeeXun/ECE4063/proj/db/add_sub_t3c.tdf Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
-    Info (12023): Found entity 1: add_sub_u3c File: D:/YeeXun/ECE4063/proj/db/add_sub_u3c.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Mod1" File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 15
-Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Mod1" with the following parameter: File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_oll.tdf
+    Info (12023): Found entity 1: lpm_divide_oll File: D:/YeeXun/ECE4063/4063proj/db/lpm_divide_oll.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: D:/YeeXun/ECE4063/4063proj/db/sign_div_unsign_nlh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ohe.tdf
+    Info (12023): Found entity 1: alt_u_div_ohe File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_ohe.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Mod4" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 29
+Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Mod4" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 29
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_bkl.tdf
-    Info (12023): Found entity 1: lpm_divide_bkl File: D:/YeeXun/ECE4063/proj/db/lpm_divide_bkl.tdf Line: 24
+    Info (12023): Found entity 1: lpm_divide_bkl File: D:/YeeXun/ECE4063/4063proj/db/lpm_divide_bkl.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_akh File: D:/YeeXun/ECE4063/proj/db/sign_div_unsign_akh.tdf Line: 24
+    Info (12023): Found entity 1: sign_div_unsign_akh File: D:/YeeXun/ECE4063/4063proj/db/sign_div_unsign_akh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_uee.tdf
-    Info (12023): Found entity 1: alt_u_div_uee File: D:/YeeXun/ECE4063/proj/db/alt_u_div_uee.tdf Line: 26
-Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Div1" File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 14
-Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Div1" with the following parameter: File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 14
+    Info (12023): Found entity 1: alt_u_div_uee File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_uee.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Div4" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 28
+Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Div4" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 28
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_8sl.tdf
-    Info (12023): Found entity 1: lpm_divide_8sl File: D:/YeeXun/ECE4063/proj/db/lpm_divide_8sl.tdf Line: 24
-Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Div0" File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 12
-Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Div0" with the following parameter: File: D:/YeeXun/ECE4063/proj/hex_display.sv Line: 12
-    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12023): Found entity 1: lpm_divide_8sl File: D:/YeeXun/ECE4063/4063proj/db/lpm_divide_8sl.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Div3" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 25
+Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Div3" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 25
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_csl.tdf
-    Info (12023): Found entity 1: lpm_divide_csl File: D:/YeeXun/ECE4063/proj/db/lpm_divide_csl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ltl.tdf
+    Info (12023): Found entity 1: lpm_divide_ltl File: D:/YeeXun/ECE4063/4063proj/db/lpm_divide_ltl.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Div2" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 22
+Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Div2" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 22
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3vl.tdf
+    Info (12023): Found entity 1: lpm_divide_3vl File: D:/YeeXun/ECE4063/4063proj/db/lpm_divide_3vl.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "hex_display:u_disp|lpm_divide:Div1" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 19
+Info (12133): Instantiated megafunction "hex_display:u_disp|lpm_divide:Div1" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 19
+    Info (12134): Parameter "LPM_WIDTHN" = "17"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_avl.tdf
+    Info (12023): Found entity 1: lpm_divide_avl File: D:/YeeXun/ECE4063/4063proj/db/lpm_divide_avl.tdf Line: 24
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "hex2[1]" is stuck at GND File: D:/YeeXun/ECE4063/proj/uart_rx_top.sv Line: 12
+    Warning (13410): Pin "hex5[0]" is stuck at GND File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 15
+    Warning (13410): Pin "hex5[1]" is stuck at GND File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 15
+    Warning (13410): Pin "hex5[2]" is stuck at GND File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 15
+    Warning (13410): Pin "hex5[3]" is stuck at GND File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 15
+    Warning (13410): Pin "hex5[4]" is stuck at GND File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 15
+    Warning (13410): Pin "hex5[5]" is stuck at GND File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 15
+    Warning (13410): Pin "hex5[6]" is stuck at VCC File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 15
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Mod1|lpm_divide_dnl:auto_generated|sign_div_unsign_cnh:divider|alt_u_div_2le:divider|add_sub_14_result_int[3]~24" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_2le.tdf Line: 56
+    Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Mod1|lpm_divide_dnl:auto_generated|sign_div_unsign_cnh:divider|alt_u_div_2le:divider|add_sub_14_result_int[2]~26" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_2le.tdf Line: 56
+    Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Mod1|lpm_divide_dnl:auto_generated|sign_div_unsign_cnh:divider|alt_u_div_2le:divider|add_sub_14_result_int[1]~28" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_2le.tdf Line: 56
+    Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Mod1|lpm_divide_dnl:auto_generated|sign_div_unsign_cnh:divider|alt_u_div_2le:divider|add_sub_14_result_int[0]~30" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_2le.tdf Line: 56
+    Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Mod1|lpm_divide_dnl:auto_generated|sign_div_unsign_cnh:divider|alt_u_div_2le:divider|add_sub_16_result_int[0]~28" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_2le.tdf Line: 66
+    Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Mod1|lpm_divide_dnl:auto_generated|sign_div_unsign_cnh:divider|alt_u_div_2le:divider|add_sub_15_result_int[0]~30" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_2le.tdf Line: 61
+    Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Div1|lpm_divide_avl:auto_generated|sign_div_unsign_cnh:divider|alt_u_div_2le:divider|add_sub_14_result_int[3]~24" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_2le.tdf Line: 56
+    Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Div1|lpm_divide_avl:auto_generated|sign_div_unsign_cnh:divider|alt_u_div_2le:divider|add_sub_14_result_int[2]~26" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_2le.tdf Line: 56
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "key[1]" File: D:/YeeXun/ECE4063/proj/uart_rx_top.sv Line: 3
-    Warning (15610): No output dependent on input pin "dtr_n" File: D:/YeeXun/ECE4063/proj/uart_rx_top.sv Line: 5
-Info (21057): Implemented 327 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "dtr_n" File: D:/YeeXun/ECE4063/4063proj/uart_rx_top.sv Line: 5
+Info (21057): Implemented 1007 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 30 output pins
-    Info (21061): Implemented 292 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4818 megabytes
-    Info: Processing ended: Thu May 15 09:30:06 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:05
+    Info (21059): Implemented 51 output pins
+    Info (21061): Implemented 951 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Thu May 15 10:32:33 2025
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:08
 
 
