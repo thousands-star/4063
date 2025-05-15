@@ -1,0 +1,18 @@
+module hex_display (
+  input  logic [7:0] bin_byte,
+  output logic [6:0] hex0, 
+  output logic [6:0] hex1, 
+  output logic [6:0] hex2  
+);
+
+  logic [3:0] digit0, digit1, digit2;
+
+  assign digit0 = 4'd0;
+  assign digit1 = bin_byte[7:4];
+  assign digit2 = bin_byte[3:0];
+
+  hex_decoder h0 (.bin(digit0), .seg(hex0));
+  hex_decoder h1 (.bin(digit1), .seg(hex1));
+  hex_decoder h2 (.bin(digit2), .seg(hex2));
+
+endmodule
