@@ -4,195 +4,195 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "leds[0]",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[1]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[2]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[3]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[4]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[5]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[6]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "leds[7]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "serial_rx_out",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "hex0[0]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "hex0[1]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "hex0[2]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "hex0[3]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "hex0[4]",
+					"name" : "HEX1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "hex0[5]",
+					"name" : "HEX2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "hex0[6]",
+					"name" : "HEX2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "hex1[0]",
+					"name" : "HEX2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "hex1[1]",
+					"name" : "HEX2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "hex1[2]",
+					"name" : "HEX2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "hex1[3]",
+					"name" : "HEX2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "hex1[4]",
+					"name" : "HEX2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "hex1[5]",
+					"name" : "HEX3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "hex1[6]",
+					"name" : "HEX3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "hex2[0]",
+					"name" : "HEX3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "hex2[1]",
+					"name" : "HEX3[3]",
 					"strict" : false
 				},
 				{
-					"name" : "hex2[2]",
+					"name" : "HEX3[4]",
 					"strict" : false
 				},
 				{
-					"name" : "hex2[3]",
+					"name" : "HEX3[5]",
 					"strict" : false
 				},
 				{
-					"name" : "hex2[4]",
+					"name" : "HEX3[6]",
 					"strict" : false
 				},
 				{
-					"name" : "hex2[5]",
+					"name" : "HEX4[0]",
 					"strict" : false
 				},
 				{
-					"name" : "hex2[6]",
+					"name" : "HEX4[1]",
 					"strict" : false
 				},
 				{
-					"name" : "hex3[0]",
+					"name" : "HEX4[2]",
 					"strict" : false
 				},
 				{
-					"name" : "hex3[1]",
+					"name" : "HEX4[3]",
 					"strict" : false
 				},
 				{
-					"name" : "hex3[2]",
+					"name" : "HEX4[4]",
 					"strict" : false
 				},
 				{
-					"name" : "hex3[3]",
+					"name" : "HEX4[5]",
 					"strict" : false
 				},
 				{
-					"name" : "hex3[4]",
+					"name" : "HEX4[6]",
 					"strict" : false
 				},
 				{
-					"name" : "hex3[5]",
+					"name" : "LED[0]",
 					"strict" : false
 				},
 				{
-					"name" : "hex3[6]",
+					"name" : "LED[1]",
 					"strict" : false
 				},
 				{
-					"name" : "hex4[0]",
+					"name" : "LED[2]",
 					"strict" : false
 				},
 				{
-					"name" : "hex4[1]",
+					"name" : "LED[3]",
 					"strict" : false
 				},
 				{
-					"name" : "hex4[2]",
+					"name" : "LED[4]",
 					"strict" : false
 				},
 				{
-					"name" : "hex4[3]",
+					"name" : "LED[5]",
 					"strict" : false
 				},
 				{
-					"name" : "hex4[4]",
+					"name" : "LED[6]",
 					"strict" : false
 				},
 				{
-					"name" : "hex4[5]",
+					"name" : "LED[7]",
 					"strict" : false
 				},
 				{
-					"name" : "hex4[6]",
+					"name" : "serial_tx",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
 					"name" : "serial_rx",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
-					"name" : "key[0]",
-					"strict" : false
-				},
-				{
-					"name" : "key[1]",
 					"strict" : false
 				}
 			]

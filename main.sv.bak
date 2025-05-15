@@ -1,0 +1,19 @@
+module main (
+    input logic CLOCK_50,         // 50 MHz Clock from FPGA
+    input logic [1:0] KEY,        // KEY[0] = Reset, KEY[1] = Volume Control
+    input logic [2:0] SW,         // Waveform Selection
+    output logic [9:0] GPIO       // PWM Output
+);
+
+
+    // Instantiate the audio generator module
+    audio_generator audio_inst (
+        .clk(CLOCK_50),
+        .reset(SW[2]),
+        .waveform_sel(SW[1:0]),
+        .key1(KEY[0]),
+        .key2(KEY[1]),
+        .pwm_out(GPIO[9])
+    );
+
+endmodule
