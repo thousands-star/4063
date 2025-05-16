@@ -1,93 +1,117 @@
-|main_rfbt_loopback
-CLOCK_50 => CLOCK_50.IN5
+|main
+CLOCK_50 => CLOCK_50.IN7
+KEY[0] => _.IN1
+KEY[0] => _.IN1
 KEY[0] => _.IN1
 KEY[0] => _.IN1
 KEY[0] => _.IN1
 KEY[0] => _.IN1
 KEY[0] => _.IN1
 KEY[1] => key1_prev.DATAIN
-KEY[1] => always2.IN1
-SW[0] => ~NO_FANOUT~
-SW[1] => ~NO_FANOUT~
+KEY[1] => always3.IN1
+SW[0] => tx_data.OUTPUTSELECT
+SW[0] => tx_data.OUTPUTSELECT
+SW[0] => tx_data.OUTPUTSELECT
+SW[0] => tx_data.OUTPUTSELECT
+SW[0] => tx_data.OUTPUTSELECT
+SW[0] => tx_data.OUTPUTSELECT
+SW[0] => tx_data.OUTPUTSELECT
+SW[0] => tx_data.OUTPUTSELECT
+SW[0] => tx_valid.OUTPUTSELECT
+SW[0] => Equal0.IN1
+SW[0] => Equal1.IN0
+SW[0] => Equal2.IN1
+SW[1] => tx_data.OUTPUTSELECT
+SW[1] => tx_data.OUTPUTSELECT
+SW[1] => tx_data.OUTPUTSELECT
+SW[1] => tx_data.OUTPUTSELECT
+SW[1] => tx_data.OUTPUTSELECT
+SW[1] => tx_data.OUTPUTSELECT
+SW[1] => tx_data.OUTPUTSELECT
+SW[1] => tx_data.OUTPUTSELECT
+SW[1] => tx_valid.OUTPUTSELECT
+SW[1] => Equal0.IN0
+SW[1] => Equal1.IN1
+SW[1] => Equal2.IN0
 SW[2] => ~NO_FANOUT~
 SW[3] => ~NO_FANOUT~
 SW[4] => ~NO_FANOUT~
 SW[5] => ~NO_FANOUT~
-SW[6] => buff_in.OUTPUTSELECT
-SW[6] => buff_in.OUTPUTSELECT
-SW[6] => buff_in.OUTPUTSELECT
-SW[6] => buff_in.OUTPUTSELECT
-SW[6] => buff_in.OUTPUTSELECT
-SW[6] => buff_in.OUTPUTSELECT
-SW[6] => buff_in.OUTPUTSELECT
-SW[6] => buff_in.OUTPUTSELECT
-SW[6] => in_valid.OUTPUTSELECT
-SW[7] => buff_in.OUTPUTSELECT
-SW[7] => buff_in.OUTPUTSELECT
-SW[7] => buff_in.OUTPUTSELECT
-SW[7] => buff_in.OUTPUTSELECT
-SW[7] => buff_in.OUTPUTSELECT
-SW[7] => buff_in.OUTPUTSELECT
-SW[7] => buff_in.OUTPUTSELECT
-SW[7] => buff_in.OUTPUTSELECT
-SW[7] => in_valid.OUTPUTSELECT
-SW[8] => tx_valid.IN1
+SW[6] => buff_input.OUTPUTSELECT
+SW[6] => buff_input.OUTPUTSELECT
+SW[6] => buff_input.OUTPUTSELECT
+SW[6] => buff_input.OUTPUTSELECT
+SW[6] => buff_input.OUTPUTSELECT
+SW[6] => buff_input.OUTPUTSELECT
+SW[6] => buff_input.OUTPUTSELECT
+SW[6] => buff_input.OUTPUTSELECT
+SW[6] => filter_valid.OUTPUTSELECT
+SW[7] => buff_input.OUTPUTSELECT
+SW[7] => buff_input.OUTPUTSELECT
+SW[7] => buff_input.OUTPUTSELECT
+SW[7] => buff_input.OUTPUTSELECT
+SW[7] => buff_input.OUTPUTSELECT
+SW[7] => buff_input.OUTPUTSELECT
+SW[7] => buff_input.OUTPUTSELECT
+SW[7] => buff_input.OUTPUTSELECT
+SW[7] => filter_valid.OUTPUTSELECT
+SW[8] => comb.IN1
 serial_rx => serial_rx.IN1
 dtr_n => ~NO_FANOUT~
-HEX0[0] <= hex_decoder:h0.seg
-HEX0[1] <= hex_decoder:h0.seg
-HEX0[2] <= hex_decoder:h0.seg
-HEX0[3] <= hex_decoder:h0.seg
-HEX0[4] <= hex_decoder:h0.seg
-HEX0[5] <= hex_decoder:h0.seg
-HEX0[6] <= hex_decoder:h0.seg
-HEX1[0] <= hex_decoder:h1.seg
-HEX1[1] <= hex_decoder:h1.seg
-HEX1[2] <= hex_decoder:h1.seg
-HEX1[3] <= hex_decoder:h1.seg
-HEX1[4] <= hex_decoder:h1.seg
-HEX1[5] <= hex_decoder:h1.seg
-HEX1[6] <= hex_decoder:h1.seg
-HEX2[0] <= hex_decoder:h2.seg
-HEX2[1] <= hex_decoder:h2.seg
-HEX2[2] <= hex_decoder:h2.seg
-HEX2[3] <= hex_decoder:h2.seg
-HEX2[4] <= hex_decoder:h2.seg
-HEX2[5] <= hex_decoder:h2.seg
-HEX2[6] <= hex_decoder:h2.seg
-HEX3[0] <= hex_decoder:h3.seg
-HEX3[1] <= hex_decoder:h3.seg
-HEX3[2] <= hex_decoder:h3.seg
-HEX3[3] <= hex_decoder:h3.seg
-HEX3[4] <= hex_decoder:h3.seg
-HEX3[5] <= hex_decoder:h3.seg
-HEX3[6] <= hex_decoder:h3.seg
-HEX4[0] <= hex_decoder:h4.seg
-HEX4[1] <= hex_decoder:h4.seg
-HEX4[2] <= hex_decoder:h4.seg
-HEX4[3] <= hex_decoder:h4.seg
-HEX4[4] <= hex_decoder:h4.seg
-HEX4[5] <= hex_decoder:h4.seg
-HEX4[6] <= hex_decoder:h4.seg
-HEX5[0] <= hex_decoder:h5.seg
-HEX5[1] <= hex_decoder:h5.seg
-HEX5[2] <= hex_decoder:h5.seg
-HEX5[3] <= hex_decoder:h5.seg
-HEX5[4] <= hex_decoder:h5.seg
-HEX5[5] <= hex_decoder:h5.seg
-HEX5[6] <= hex_decoder:h5.seg
-LED[0] <= rx_valid.DB_MAX_OUTPUT_PORT_TYPE
-LED[1] <= buffer:u_buffer.data_valid
-LED[2] <= tx_valid.DB_MAX_OUTPUT_PORT_TYPE
-LED[3] <= uart_tx:u_tx.tx_ready
-LED[4] <= buffer:u_buffer.empty
-LED[5] <= buffer:u_buffer.full
-LED[6] <= <GND>
-LED[7] <= <GND>
-serial_tx <= uart_tx:u_tx.serial_tx
+HEX0[0] << hex_decoder:h0.seg
+HEX0[1] << hex_decoder:h0.seg
+HEX0[2] << hex_decoder:h0.seg
+HEX0[3] << hex_decoder:h0.seg
+HEX0[4] << hex_decoder:h0.seg
+HEX0[5] << hex_decoder:h0.seg
+HEX0[6] << hex_decoder:h0.seg
+HEX1[0] << hex_decoder:h1.seg
+HEX1[1] << hex_decoder:h1.seg
+HEX1[2] << hex_decoder:h1.seg
+HEX1[3] << hex_decoder:h1.seg
+HEX1[4] << hex_decoder:h1.seg
+HEX1[5] << hex_decoder:h1.seg
+HEX1[6] << hex_decoder:h1.seg
+HEX2[0] << hex_decoder:h2.seg
+HEX2[1] << hex_decoder:h2.seg
+HEX2[2] << hex_decoder:h2.seg
+HEX2[3] << hex_decoder:h2.seg
+HEX2[4] << hex_decoder:h2.seg
+HEX2[5] << hex_decoder:h2.seg
+HEX2[6] << hex_decoder:h2.seg
+HEX3[0] << hex_decoder:h3.seg
+HEX3[1] << hex_decoder:h3.seg
+HEX3[2] << hex_decoder:h3.seg
+HEX3[3] << hex_decoder:h3.seg
+HEX3[4] << hex_decoder:h3.seg
+HEX3[5] << hex_decoder:h3.seg
+HEX3[6] << hex_decoder:h3.seg
+HEX4[0] << hex_decoder:h4.seg
+HEX4[1] << hex_decoder:h4.seg
+HEX4[2] << hex_decoder:h4.seg
+HEX4[3] << hex_decoder:h4.seg
+HEX4[4] << hex_decoder:h4.seg
+HEX4[5] << hex_decoder:h4.seg
+HEX4[6] << hex_decoder:h4.seg
+HEX5[0] << hex_decoder:h5.seg
+HEX5[1] << hex_decoder:h5.seg
+HEX5[2] << hex_decoder:h5.seg
+HEX5[3] << hex_decoder:h5.seg
+HEX5[4] << hex_decoder:h5.seg
+HEX5[5] << hex_decoder:h5.seg
+HEX5[6] << hex_decoder:h5.seg
+LED[0] << rx_valid.DB_MAX_OUTPUT_PORT_TYPE
+LED[1] << buffer:buf_square.data_valid
+LED[2] << tx_valid.DB_MAX_OUTPUT_PORT_TYPE
+LED[3] << uart_tx:u_tx.tx_ready
+LED[4] << buffer:buf_square.empty
+LED[5] << buffer:buf_square.full
+LED[6] << <GND>
+LED[7] << <GND>
+serial_tx << uart_tx:u_tx.serial_tx
 
 
-|main_rfbt_loopback|uart_rxv2:u_rx
+|main|uart_rxv2:u_rx
 clk => recv_count[0]~reg0.CLK
 clk => recv_count[1]~reg0.CLK
 clk => recv_count[2]~reg0.CLK
@@ -261,7 +285,7 @@ recv_count[14] <= recv_count[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 recv_count[15] <= recv_count[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|ma_filter:u_ma
+|main|ma_filter:u_ma
 clk => sample_count[0].CLK
 clk => sample_count[1].CLK
 clk => sample_count[2].CLK
@@ -1025,7 +1049,7 @@ out_data[7] <= out_data.DB_MAX_OUTPUT_PORT_TYPE
 out_valid <= in_valid.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|fir_filter:u_fir
+|main|fir_filter:u_fir
 clk => sample_count[0].CLK
 clk => sample_count[1].CLK
 clk => sample_count[2].CLK
@@ -1549,7 +1573,45 @@ out_data[7] <= out_data.DB_MAX_OUTPUT_PORT_TYPE
 out_valid <= in_valid.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|buffer:u_buffer
+|main|square_wave_gen:u_square
+in_data[0] => LessThan0.IN16
+in_data[1] => LessThan0.IN15
+in_data[2] => LessThan0.IN14
+in_data[3] => LessThan0.IN13
+in_data[4] => LessThan0.IN12
+in_data[5] => LessThan0.IN11
+in_data[6] => LessThan0.IN10
+in_data[7] => LessThan0.IN9
+out_data[0] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+out_data[4] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+out_data[5] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+out_data[6] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+out_data[7] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|triangle_wave_gen:u_triangle
+in_data[0] => TRI_LUT.RADDR
+in_data[1] => TRI_LUT.RADDR1
+in_data[2] => TRI_LUT.RADDR2
+in_data[3] => TRI_LUT.RADDR3
+in_data[4] => TRI_LUT.RADDR4
+in_data[5] => TRI_LUT.RADDR5
+in_data[6] => TRI_LUT.RADDR6
+in_data[7] => TRI_LUT.RADDR7
+out_data[0] <= TRI_LUT.DATAOUT
+out_data[1] <= TRI_LUT.DATAOUT1
+out_data[2] <= TRI_LUT.DATAOUT2
+out_data[3] <= TRI_LUT.DATAOUT3
+out_data[4] <= TRI_LUT.DATAOUT4
+out_data[5] <= TRI_LUT.DATAOUT5
+out_data[6] <= TRI_LUT.DATAOUT6
+out_data[7] <= TRI_LUT.DATAOUT7
+
+
+|main|buffer:buf_sine
 clk => mem.we_a.CLK
 clk => mem.waddr_a[8].CLK
 clk => mem.waddr_a[7].CLK
@@ -1685,7 +1747,279 @@ count_dbg[8] <= count[8].DB_MAX_OUTPUT_PORT_TYPE
 count_dbg[9] <= count[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|uart_tx:u_tx
+|main|buffer:buf_square
+clk => mem.we_a.CLK
+clk => mem.waddr_a[8].CLK
+clk => mem.waddr_a[7].CLK
+clk => mem.waddr_a[6].CLK
+clk => mem.waddr_a[5].CLK
+clk => mem.waddr_a[4].CLK
+clk => mem.waddr_a[3].CLK
+clk => mem.waddr_a[2].CLK
+clk => mem.waddr_a[1].CLK
+clk => mem.waddr_a[0].CLK
+clk => mem.data_a[7].CLK
+clk => mem.data_a[6].CLK
+clk => mem.data_a[5].CLK
+clk => mem.data_a[4].CLK
+clk => mem.data_a[3].CLK
+clk => mem.data_a[2].CLK
+clk => mem.data_a[1].CLK
+clk => mem.data_a[0].CLK
+clk => rd_ptr[0].CLK
+clk => rd_ptr[1].CLK
+clk => rd_ptr[2].CLK
+clk => rd_ptr[3].CLK
+clk => rd_ptr[4].CLK
+clk => rd_ptr[5].CLK
+clk => rd_ptr[6].CLK
+clk => rd_ptr[7].CLK
+clk => rd_ptr[8].CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => wr_ptr[0].CLK
+clk => wr_ptr[1].CLK
+clk => wr_ptr[2].CLK
+clk => wr_ptr[3].CLK
+clk => wr_ptr[4].CLK
+clk => wr_ptr[5].CLK
+clk => wr_ptr[6].CLK
+clk => wr_ptr[7].CLK
+clk => wr_ptr[8].CLK
+clk => mem.CLK0
+rst => rd_ptr[0].ACLR
+rst => rd_ptr[1].ACLR
+rst => rd_ptr[2].ACLR
+rst => rd_ptr[3].ACLR
+rst => rd_ptr[4].ACLR
+rst => rd_ptr[5].ACLR
+rst => rd_ptr[6].ACLR
+rst => rd_ptr[7].ACLR
+rst => rd_ptr[8].ACLR
+rst => count[0].ACLR
+rst => count[1].ACLR
+rst => count[2].ACLR
+rst => count[3].ACLR
+rst => count[4].ACLR
+rst => count[5].ACLR
+rst => count[6].ACLR
+rst => count[7].ACLR
+rst => count[8].ACLR
+rst => count[9].ACLR
+rst => wr_ptr[0].ACLR
+rst => wr_ptr[1].ACLR
+rst => wr_ptr[2].ACLR
+rst => wr_ptr[3].ACLR
+rst => wr_ptr[4].ACLR
+rst => wr_ptr[5].ACLR
+rst => wr_ptr[6].ACLR
+rst => wr_ptr[7].ACLR
+rst => wr_ptr[8].ACLR
+rst => comb.IN1
+write_en => always0.IN1
+write_data[0] => mem.data_a[0].DATAIN
+write_data[0] => mem.DATAIN
+write_data[1] => mem.data_a[1].DATAIN
+write_data[1] => mem.DATAIN1
+write_data[2] => mem.data_a[2].DATAIN
+write_data[2] => mem.DATAIN2
+write_data[3] => mem.data_a[3].DATAIN
+write_data[3] => mem.DATAIN3
+write_data[4] => mem.data_a[4].DATAIN
+write_data[4] => mem.DATAIN4
+write_data[5] => mem.data_a[5].DATAIN
+write_data[5] => mem.DATAIN5
+write_data[6] => mem.data_a[6].DATAIN
+write_data[6] => mem.DATAIN6
+write_data[7] => mem.data_a[7].DATAIN
+write_data[7] => mem.DATAIN7
+read_en => always1.IN1
+read_data[0] <= mem.DATAOUT
+read_data[1] <= mem.DATAOUT1
+read_data[2] <= mem.DATAOUT2
+read_data[3] <= mem.DATAOUT3
+read_data[4] <= mem.DATAOUT4
+read_data[5] <= mem.DATAOUT5
+read_data[6] <= mem.DATAOUT6
+read_data[7] <= mem.DATAOUT7
+data_valid <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+empty <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+full <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[0] <= wr_ptr[0].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[1] <= wr_ptr[1].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[2] <= wr_ptr[2].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[3] <= wr_ptr[3].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[4] <= wr_ptr[4].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[5] <= wr_ptr[5].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[6] <= wr_ptr[6].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[7] <= wr_ptr[7].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[8] <= wr_ptr[8].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[0] <= rd_ptr[0].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[1] <= rd_ptr[1].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[2] <= rd_ptr[2].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[3] <= rd_ptr[3].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[4] <= rd_ptr[4].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[5] <= rd_ptr[5].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[6] <= rd_ptr[6].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[7] <= rd_ptr[7].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[8] <= rd_ptr[8].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[4] <= count[4].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[5] <= count[5].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[6] <= count[6].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[7] <= count[7].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[8] <= count[8].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[9] <= count[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|buffer:buf_triangle
+clk => mem.we_a.CLK
+clk => mem.waddr_a[8].CLK
+clk => mem.waddr_a[7].CLK
+clk => mem.waddr_a[6].CLK
+clk => mem.waddr_a[5].CLK
+clk => mem.waddr_a[4].CLK
+clk => mem.waddr_a[3].CLK
+clk => mem.waddr_a[2].CLK
+clk => mem.waddr_a[1].CLK
+clk => mem.waddr_a[0].CLK
+clk => mem.data_a[7].CLK
+clk => mem.data_a[6].CLK
+clk => mem.data_a[5].CLK
+clk => mem.data_a[4].CLK
+clk => mem.data_a[3].CLK
+clk => mem.data_a[2].CLK
+clk => mem.data_a[1].CLK
+clk => mem.data_a[0].CLK
+clk => rd_ptr[0].CLK
+clk => rd_ptr[1].CLK
+clk => rd_ptr[2].CLK
+clk => rd_ptr[3].CLK
+clk => rd_ptr[4].CLK
+clk => rd_ptr[5].CLK
+clk => rd_ptr[6].CLK
+clk => rd_ptr[7].CLK
+clk => rd_ptr[8].CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => wr_ptr[0].CLK
+clk => wr_ptr[1].CLK
+clk => wr_ptr[2].CLK
+clk => wr_ptr[3].CLK
+clk => wr_ptr[4].CLK
+clk => wr_ptr[5].CLK
+clk => wr_ptr[6].CLK
+clk => wr_ptr[7].CLK
+clk => wr_ptr[8].CLK
+clk => mem.CLK0
+rst => rd_ptr[0].ACLR
+rst => rd_ptr[1].ACLR
+rst => rd_ptr[2].ACLR
+rst => rd_ptr[3].ACLR
+rst => rd_ptr[4].ACLR
+rst => rd_ptr[5].ACLR
+rst => rd_ptr[6].ACLR
+rst => rd_ptr[7].ACLR
+rst => rd_ptr[8].ACLR
+rst => count[0].ACLR
+rst => count[1].ACLR
+rst => count[2].ACLR
+rst => count[3].ACLR
+rst => count[4].ACLR
+rst => count[5].ACLR
+rst => count[6].ACLR
+rst => count[7].ACLR
+rst => count[8].ACLR
+rst => count[9].ACLR
+rst => wr_ptr[0].ACLR
+rst => wr_ptr[1].ACLR
+rst => wr_ptr[2].ACLR
+rst => wr_ptr[3].ACLR
+rst => wr_ptr[4].ACLR
+rst => wr_ptr[5].ACLR
+rst => wr_ptr[6].ACLR
+rst => wr_ptr[7].ACLR
+rst => wr_ptr[8].ACLR
+rst => comb.IN1
+write_en => always0.IN1
+write_data[0] => mem.data_a[0].DATAIN
+write_data[0] => mem.DATAIN
+write_data[1] => mem.data_a[1].DATAIN
+write_data[1] => mem.DATAIN1
+write_data[2] => mem.data_a[2].DATAIN
+write_data[2] => mem.DATAIN2
+write_data[3] => mem.data_a[3].DATAIN
+write_data[3] => mem.DATAIN3
+write_data[4] => mem.data_a[4].DATAIN
+write_data[4] => mem.DATAIN4
+write_data[5] => mem.data_a[5].DATAIN
+write_data[5] => mem.DATAIN5
+write_data[6] => mem.data_a[6].DATAIN
+write_data[6] => mem.DATAIN6
+write_data[7] => mem.data_a[7].DATAIN
+write_data[7] => mem.DATAIN7
+read_en => always1.IN1
+read_data[0] <= mem.DATAOUT
+read_data[1] <= mem.DATAOUT1
+read_data[2] <= mem.DATAOUT2
+read_data[3] <= mem.DATAOUT3
+read_data[4] <= mem.DATAOUT4
+read_data[5] <= mem.DATAOUT5
+read_data[6] <= mem.DATAOUT6
+read_data[7] <= mem.DATAOUT7
+data_valid <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+empty <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+full <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[0] <= wr_ptr[0].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[1] <= wr_ptr[1].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[2] <= wr_ptr[2].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[3] <= wr_ptr[3].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[4] <= wr_ptr[4].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[5] <= wr_ptr[5].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[6] <= wr_ptr[6].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[7] <= wr_ptr[7].DB_MAX_OUTPUT_PORT_TYPE
+wr_ptr_dbg[8] <= wr_ptr[8].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[0] <= rd_ptr[0].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[1] <= rd_ptr[1].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[2] <= rd_ptr[2].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[3] <= rd_ptr[3].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[4] <= rd_ptr[4].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[5] <= rd_ptr[5].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[6] <= rd_ptr[6].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[7] <= rd_ptr[7].DB_MAX_OUTPUT_PORT_TYPE
+rd_ptr_dbg[8] <= rd_ptr[8].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[4] <= count[4].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[5] <= count[5].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[6] <= count[6].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[7] <= count[7].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[8] <= count[8].DB_MAX_OUTPUT_PORT_TYPE
+count_dbg[9] <= count[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|uart_tx:u_tx
 clk => tx_shift[0].CLK
 clk => tx_shift[1].CLK
 clk => tx_shift[2].CLK
@@ -1828,7 +2162,7 @@ tx_ready <= tx_ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 serial_tx <= serial_tx~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|hex_display:u_disp
+|main|hex_display:u_disp
 bin[0] => Div0.IN40
 bin[0] => Mod0.IN40
 bin[1] => Div0.IN39
@@ -1903,7 +2237,7 @@ digit0[2] <= Mod4.DB_MAX_OUTPUT_PORT_TYPE
 digit0[3] <= Mod4.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|hex_decoder:h0
+|main|hex_decoder:h0
 bin[0] => Decoder0.IN3
 bin[1] => Decoder0.IN2
 bin[2] => Decoder0.IN1
@@ -1917,7 +2251,7 @@ seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|hex_decoder:h1
+|main|hex_decoder:h1
 bin[0] => Decoder0.IN3
 bin[1] => Decoder0.IN2
 bin[2] => Decoder0.IN1
@@ -1931,7 +2265,7 @@ seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|hex_decoder:h2
+|main|hex_decoder:h2
 bin[0] => Decoder0.IN3
 bin[1] => Decoder0.IN2
 bin[2] => Decoder0.IN1
@@ -1945,7 +2279,7 @@ seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|hex_decoder:h3
+|main|hex_decoder:h3
 bin[0] => Decoder0.IN3
 bin[1] => Decoder0.IN2
 bin[2] => Decoder0.IN1
@@ -1959,7 +2293,7 @@ seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|hex_decoder:h4
+|main|hex_decoder:h4
 bin[0] => Decoder0.IN3
 bin[1] => Decoder0.IN2
 bin[2] => Decoder0.IN1
@@ -1973,7 +2307,7 @@ seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main_rfbt_loopback|hex_decoder:h5
+|main|hex_decoder:h5
 bin[0] => Decoder0.IN3
 bin[1] => Decoder0.IN2
 bin[2] => Decoder0.IN1

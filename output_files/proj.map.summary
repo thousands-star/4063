@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Fri May 16 15:53:40 2025
+Analysis & Synthesis Status : Successful - Fri May 16 18:16:47 2025
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : proj
-Top-level Entity Name : main_rfbt_loopback
+Top-level Entity Name : main
 Family : MAX 10
-Total logic elements : 2,866
-    Total combinational functions : 2,595
-    Dedicated logic registers : 460
-Total registers : 460
+Total logic elements : 3,172
+    Total combinational functions : 2,836
+    Dedicated logic registers : 550
+Total registers : 550
 Total pins : 65
 Total virtual pins : 0
-Total memory bits : 4,096
+Total memory bits : 12,288
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0
 UFM blocks : 0

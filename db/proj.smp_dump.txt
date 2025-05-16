@@ -1,12 +1,12 @@
 
-State Machine - |main_rfbt_loopback|uart_tx:u_tx|state
+State Machine - |main|uart_tx:u_tx|state
 Name state.STOP state.DATA state.START state.IDLE 
 state.IDLE 0 0 0 0 
 state.START 0 0 1 1 
 state.DATA 0 1 0 1 
 state.STOP 1 0 0 1 
 
-State Machine - |main_rfbt_loopback|uart_rxv2:u_rx|state
+State Machine - |main|uart_rxv2:u_rx|state
 Name state.STOP state.DATA state.START state.IDLE 
 state.IDLE 0 0 0 0 
 state.START 0 0 1 1 
