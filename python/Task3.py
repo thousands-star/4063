@@ -4,8 +4,6 @@ import time
 import pandas as pd
 import matplotlib.pyplot as plt
 
-TXDELAY = 0.0005
-
 def preview_csv_plot(filename):
     df = pd.read_csv(filename)
 
@@ -44,10 +42,12 @@ def transmit_and_receive(port, baudrate, csv_path, receive_enabled=True):
     print(f"Opened {port}, DTR: {ser.dtr}")
 
     received = []
+    Tx_count = 0
     try:
         for value in tx_data:
             ser.write(bytes([value]))
             time.sleep(TXDELAY)
+            Tx_count += 1
 
             if receive_enabled:
                 rx_byte = ser.read(size=1)
@@ -60,7 +60,7 @@ def transmit_and_receive(port, baudrate, csv_path, receive_enabled=True):
         print("Interrupted by user.")
 
     ser.close()
-    print(f"Transmission complete. Sent {len(tx_data)} bytes.")
+    print(f"Transmission complete. Sent {Tx_count} bytes.")
 
     if receive_enabled:
         return tx_data[:len(received)], received
@@ -94,8 +94,9 @@ def plot_tx_rx(tx_data, rx_data):
 if __name__ == "__main__":
     csv_file = "./uart_ready_output.csv"
     port = "COM7"
+    TXDELAY = 0.0005
     baud = 115200
 
     #preview_csv_plot(csv_file)
     tx, rx = transmit_and_receive(port, baud, csv_file, receive_enabled=False)
-    # plot_tx_rx(tx, rx)
+    #plot_tx_rx(tx, rx)

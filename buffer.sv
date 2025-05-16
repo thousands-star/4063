@@ -20,7 +20,8 @@ module buffer #(
 
     // Debug pointers
     output logic [ADDR_WIDTH-1:0] wr_ptr_dbg,
-    output logic [ADDR_WIDTH-1:0] rd_ptr_dbg
+    output logic [ADDR_WIDTH-1:0] rd_ptr_dbg,
+	 output logic [ADDR_WIDTH:0] count_dbg 
 );
 
     // Internal memory
@@ -36,6 +37,7 @@ module buffer #(
     // Debug
     assign wr_ptr_dbg = wr_ptr;
     assign rd_ptr_dbg = rd_ptr;
+	 assign count_dbg = count;
 
     // ----------------------------
     // Write logic

@@ -33,18 +33,19 @@ module main (
     logic       tx_ready;
 
     // === Mode Toggle Logic ===
-    logic [1:0] show_mode;
+    logic [2:0] show_mode;
     logic key1_prev;
-    always_ff @(posedge CLOCK_50) begin
-        key1_prev <= KEY[1];
-        if (~KEY[1] && key1_prev)
-            show_mode <= show_mode + 1;
-    end
+	 always_ff @(posedge CLOCK_50) begin
+	  	 key1_prev <= KEY[1];
+		 if (~KEY[1] && key1_prev)
+			  show_mode <= (show_mode == 4) ? 0 : show_mode + 1;
+	 end
+
 
     // === UART RX Instance ===
     uart_rxv2 #(
         .CLK_FREQ(50_000_000),
-        .BAUD(100000)
+        .BAUD(115200)
     ) u_rx (
         .clk        (CLOCK_50),
         .rst        (~KEY[0]),
@@ -132,7 +133,7 @@ module main (
 
     uart_tx #(
         .CLK_FREQ(50_000_000),
-        .BAUD(100000)
+        .BAUD(115200)
     ) u_tx (
         .clk        (CLOCK_50),
         .rst        (~KEY[0]),
@@ -141,17 +142,40 @@ module main (
         .tx_ready   (tx_ready),
         .serial_tx  (serial_tx)
     );
+	 
 
     // === Display ===
-    logic [23:0] display_val;
-    always_comb begin
-        case (show_mode)
-            2'd0: display_val = {8'd0, recv_count};         // show RX counter
-            2'd1: display_val = {15'd0, wr_ptr_debug};      // show wr_ptr
-            2'd2: display_val = {15'd0, rd_ptr_debug};      // show rd_ptr
-            default: display_val = 15'd030314;              // debug fallback
-        endcase
-    end
+	logic [23:0] display_val;
+	logic [3:0] mode_val;
+
+	always_comb begin
+		 case (show_mode)
+			  3'd0: begin
+					display_val = 24'd030314;  // ID signature
+					mode_val    = 4'd0;
+			  end
+			  3'd1: begin
+					display_val = {16'd0, recv_count};  // RX count
+					mode_val    = 4'd1;
+			  end
+			  3'd2: begin
+					display_val = {16'd0, rx_data};  // latest received value
+					mode_val    = 4'd2;
+			  end
+			  3'd3: begin
+					display_val = {16'd0, wr_ptr_debug};
+					mode_val    = 4'd3;
+			  end
+			  3'd4: begin
+					display_val = {16'd0, rd_ptr_debug};
+					mode_val    = 4'd4;
+			  end
+			  default: begin
+					display_val = 24'd999999;
+					mode_val    = 4'd0;
+			  end
+		 endcase
+	end
 
     logic [3:0] digit0, digit1, digit2, digit3, digit4, digit5;
 
@@ -170,7 +194,7 @@ module main (
     hex_decoder h2 (.bin(digit2), .seg(HEX2));
     hex_decoder h3 (.bin(digit3), .seg(HEX3));
     hex_decoder h4 (.bin(digit4), .seg(HEX4));
-    hex_decoder h5 (.bin(digit5), .seg(HEX5));
+    hex_decoder h5 (.bin(mode_val), .seg(HEX5));  // show mode #
 
     // === LED status register ===
     assign LED[0] = rx_valid;
