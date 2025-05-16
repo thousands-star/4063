@@ -81,7 +81,7 @@ if __name__ == "__main__":
     port = "COM7"
     baud = 115200
     original_csv = "uart_ready_output.csv"
-    cycle = 5  # Change this to 2, 3, etc. to repeat more waveform cycles
+    cycle = 4  # Change this to 2, 3, etc. to repeat more waveform cycles
 
     try:
         time_vals, original_data = load_original_csv(original_csv)
