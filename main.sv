@@ -84,6 +84,7 @@ module main (
     // === Signal Processing ===
     logic [7:0] square_data;
 	 logic [7:0] triangle_data;
+	 logic [7:0] fm_data;
 
     square_wave_gen u_square (
         .in_data  (buff_input),
@@ -93,6 +94,14 @@ module main (
 	 triangle_wave_gen u_triangle (
 		  .in_data  (buff_input),
 		  .out_data (triangle_data)
+	 );
+	 
+	 fm_wave_gen1u u_fm (
+	     .clk      (CLOCK_50),
+		  .rst      (~KEY[0]),
+		  .in_valid (filter_valid),
+		  .in_data  (buff_input),
+		  .out_data (fm_data)
 	 );
 
 
@@ -167,6 +176,30 @@ module main (
 			 .rd_ptr_dbg  (rd_ptr_triangle),
 			 .count_dbg   (occ_triangle)
 		);
+		
+	 // === Buffer for FM-modulated wave processed signal ===
+    logic [7:0]  out_fm;
+    logic        val_fm, empty_fm, full_fm, read_fm;
+    logic [8:0]  wr_ptr_fm, rd_ptr_fm;
+    logic [9:0]  occ_fm;
+
+    buffer #(
+      .DEPTH      (512),
+      .ADDR_WIDTH (9)
+    ) buf_fm (
+      .clk         (CLOCK_50),
+      .rst         (~KEY[0]),
+      .write_en    (filter_valid),     // assert when your FM generator output is ready
+      .write_data  (fm_data),      // connect to your fm_wave_gen out
+      .read_en     (read_fm),
+      .read_data   (out_fm),
+      .data_valid  (val_fm),
+      .empty       (empty_fm),
+      .full        (full_fm),
+      .wr_ptr_dbg  (wr_ptr_fm),
+      .rd_ptr_dbg  (rd_ptr_fm),
+      .count_dbg   (occ_fm)
+    );
 
     // === TX Multiplexor ===
     logic [7:0] tx_data;
@@ -174,7 +207,10 @@ module main (
     logic       tx_ready, tx_ready_prev;
 
     always_comb begin
-        if (SW[1]) begin
+	     if (SW[2]) begin
+		      tx_data = out_fm;
+				tx_valid = val_fm;
+        end else if (SW[1]) begin
             tx_data  = out_triangle;
             tx_valid = val_triangle;
         end else if (SW[0]) begin
@@ -190,9 +226,10 @@ module main (
 	 
 	 logic       read_en;
 
-		assign read_sine     = read_en &&  (SW[1:0] == 2'b00);
-		assign read_square   = read_en &&  (SW[1:0] == 2'b01);
-		assign read_triangle = read_en &&  (SW[1:0] == 2'b10);
+		assign read_sine     = read_en &&  (SW[2:0] == 3'b000);
+		assign read_square   = read_en &&  (SW[2:0] == 3'b001);
+		assign read_triangle = read_en &&  (SW[2:0] == 3'b010);
+		assign read_fm       = read_en &&  (SW[2:0] == 3'b100);
 		
 	 always_ff @(posedge CLOCK_50) begin
         tx_ready_prev <= tx_ready;
@@ -230,10 +267,10 @@ module main (
 			  3'd0: begin display_val = 24'd030314;             mode_val = 4'd0; end
 			  3'd1: begin display_val = {16'd0, recv_count};    mode_val = 4'd1; end
 			  3'd2: begin display_val = {16'd0, rx_data};       mode_val = 4'd2; end
-			  3'd3: begin display_val = {16'd0, wr_ptr_sine}; mode_val = 4'd3; end
-			  3'd4: begin display_val = {16'd0, rd_ptr_sine}; mode_val = 4'd4; end
-			  3'd5: begin display_val = {14'd0, occ_square};    mode_val = 4'd5; end
-			  3'd6: begin display_val = {16'd0, triangle_data};    mode_val = 4'd6; end
+			  3'd3: begin display_val = {16'd0, buff_input}; mode_val = 4'd3; end
+			  3'd4: begin display_val = {16'd0, square_data}; mode_val = 4'd4; end
+			  3'd5: begin display_val = {14'd0, triangle_data};    mode_val = 4'd5; end
+			  3'd6: begin display_val = {16'd0, fm_data};    mode_val = 4'd6; end
 			  default: begin display_val = 24'd999999;          mode_val = 4'd0; end
 		 endcase
 	end

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for proj
-Fri May 16 18:16:47 2025
+Sun May 18 23:14:45 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -23,43 +23,48 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  15. Source assignments for buffer:buf_sine|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated
  16. Source assignments for buffer:buf_square|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated
  17. Source assignments for buffer:buf_triangle|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated
- 18. Parameter Settings for User Entity Instance: uart_rxv2:u_rx
- 19. Parameter Settings for User Entity Instance: ma_filter:u_ma
- 20. Parameter Settings for User Entity Instance: fir_filter:u_fir
- 21. Parameter Settings for User Entity Instance: buffer:buf_sine
- 22. Parameter Settings for User Entity Instance: buffer:buf_square
- 23. Parameter Settings for User Entity Instance: buffer:buf_triangle
- 24. Parameter Settings for User Entity Instance: uart_tx:u_tx
- 25. Parameter Settings for Inferred Entity Instance: buffer:buf_sine|altsyncram:mem_rtl_0
- 26. Parameter Settings for Inferred Entity Instance: buffer:buf_square|altsyncram:mem_rtl_0
- 27. Parameter Settings for Inferred Entity Instance: buffer:buf_triangle|altsyncram:mem_rtl_0
- 28. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_divide:Div0
- 29. Parameter Settings for Inferred Entity Instance: ma_filter:u_ma|lpm_divide:Div0
- 30. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod0
- 31. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod1
- 32. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod2
- 33. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod3
- 34. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod4
- 35. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div4
- 36. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div3
- 37. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div2
- 38. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div1
- 39. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult5
- 40. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult4
- 41. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult3
- 42. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult2
- 43. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult0
- 44. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult1
- 45. altsyncram Parameter Settings by Entity Instance
- 46. lpm_mult Parameter Settings by Entity Instance
- 47. Port Connectivity Checks: "hex_decoder:h5"
- 48. Port Connectivity Checks: "hex_display:u_disp"
- 49. Port Connectivity Checks: "buffer:buf_triangle"
- 50. Port Connectivity Checks: "buffer:buf_square"
- 51. Port Connectivity Checks: "buffer:buf_sine"
- 52. Post-Synthesis Netlist Statistics for Top Partition
- 53. Elapsed Time Per Partition
- 54. Analysis & Synthesis Messages
+ 18. Source assignments for buffer:buf_fm|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated
+ 19. Parameter Settings for User Entity Instance: uart_rxv2:u_rx
+ 20. Parameter Settings for User Entity Instance: ma_filter:u_ma
+ 21. Parameter Settings for User Entity Instance: fir_filter:u_fir
+ 22. Parameter Settings for User Entity Instance: buffer:buf_sine
+ 23. Parameter Settings for User Entity Instance: buffer:buf_square
+ 24. Parameter Settings for User Entity Instance: buffer:buf_triangle
+ 25. Parameter Settings for User Entity Instance: buffer:buf_fm
+ 26. Parameter Settings for User Entity Instance: uart_tx:u_tx
+ 27. Parameter Settings for Inferred Entity Instance: buffer:buf_sine|altsyncram:mem_rtl_0
+ 28. Parameter Settings for Inferred Entity Instance: buffer:buf_square|altsyncram:mem_rtl_0
+ 29. Parameter Settings for Inferred Entity Instance: buffer:buf_triangle|altsyncram:mem_rtl_0
+ 30. Parameter Settings for Inferred Entity Instance: buffer:buf_fm|altsyncram:mem_rtl_0
+ 31. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_divide:Div0
+ 32. Parameter Settings for Inferred Entity Instance: ma_filter:u_ma|lpm_divide:Div0
+ 33. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod0
+ 34. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod1
+ 35. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod2
+ 36. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod3
+ 37. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Mod4
+ 38. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div4
+ 39. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div3
+ 40. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div2
+ 41. Parameter Settings for Inferred Entity Instance: hex_display:u_disp|lpm_divide:Div1
+ 42. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult5
+ 43. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult4
+ 44. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult3
+ 45. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult2
+ 46. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult0
+ 47. Parameter Settings for Inferred Entity Instance: fir_filter:u_fir|lpm_mult:Mult1
+ 48. altsyncram Parameter Settings by Entity Instance
+ 49. lpm_mult Parameter Settings by Entity Instance
+ 50. Port Connectivity Checks: "hex_decoder:h5"
+ 51. Port Connectivity Checks: "hex_display:u_disp"
+ 52. Port Connectivity Checks: "buffer:buf_fm"
+ 53. Port Connectivity Checks: "buffer:buf_triangle"
+ 54. Port Connectivity Checks: "buffer:buf_square"
+ 55. Port Connectivity Checks: "buffer:buf_sine"
+ 56. Post-Synthesis Netlist Statistics for Top Partition
+ 57. Elapsed Time Per Partition
+ 58. Analysis & Synthesis Messages
+ 59. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -85,18 +90,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 16 18:16:47 2025       ;
+; Analysis & Synthesis Status        ; Successful - Sun May 18 23:14:45 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; proj                                        ;
 ; Top-level Entity Name              ; main                                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 3,172                                       ;
-;     Total combinational functions  ; 2,836                                       ;
-;     Dedicated logic registers      ; 550                                         ;
-; Total registers                    ; 550                                         ;
+; Total logic elements               ; 3,939                                       ;
+;     Total combinational functions  ; 3,583                                       ;
+;     Dedicated logic registers      ; 599                                         ;
+; Total registers                    ; 599                                         ;
 ; Total pins                         ; 65                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 12,288                                      ;
+; Total memory bits                  ; 16,384                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 ; UFM blocks                         ; 0                                           ;
@@ -203,7 +208,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
@@ -218,6 +223,7 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; fm_wave_gen1u.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv                                    ;         ;
 ; triangle_wave_gen.sv             ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/4063proj/triangle_wave_gen.sv                                ;         ;
 ; square_wave_gen.sv               ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/4063proj/square_wave_gen.sv                                  ;         ;
 ; ma_filter.sv                     ; yes             ; User SystemVerilog HDL File  ; D:/YeeXun/ECE4063/4063proj/ma_filter.sv                                        ;         ;
@@ -297,31 +303,31 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 3,172          ;
+; Estimated Total logic elements              ; 3,939          ;
 ;                                             ;                ;
-; Total combinational functions               ; 2836           ;
+; Total combinational functions               ; 3583           ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 798            ;
-;     -- 3 input functions                    ; 1010           ;
-;     -- <=2 input functions                  ; 1028           ;
+;     -- 4 input functions                    ; 1392           ;
+;     -- 3 input functions                    ; 1165           ;
+;     -- <=2 input functions                  ; 1026           ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 1657           ;
-;     -- arithmetic mode                      ; 1179           ;
+;     -- normal mode                          ; 2358           ;
+;     -- arithmetic mode                      ; 1225           ;
 ;                                             ;                ;
-; Total registers                             ; 550            ;
-;     -- Dedicated logic registers            ; 550            ;
+; Total registers                             ; 599            ;
+;     -- Dedicated logic registers            ; 599            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 65             ;
-; Total memory bits                           ; 12288          ;
+; Total memory bits                           ; 16384          ;
 ;                                             ;                ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 574            ;
-; Total fan-out                               ; 10620          ;
-; Average fan-out                             ; 3.00           ;
+; Maximum fan-out                             ; 631            ;
+; Total fan-out                               ; 13791          ;
+; Average fan-out                             ; 3.17           ;
 +---------------------------------------------+----------------+
 
 
@@ -330,11 +336,14 @@ refer to the applicable agreement for further details.
 +------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                      ; Entity Name         ; Library Name ;
 +------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |main                                          ; 2836 (109)          ; 550 (6)                   ; 12288       ; 0          ; 0            ; 0       ; 0         ; 65   ; 0            ; 0          ; |main                                                                                                                    ; main                ; work         ;
-;    |buffer:buf_sine|                           ; 64 (64)             ; 63 (63)                   ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_sine                                                                                                    ; buffer              ; work         ;
+; |main                                          ; 3583 (115)          ; 599 (6)                   ; 16384       ; 0          ; 0            ; 0       ; 0         ; 65   ; 0            ; 0          ; |main                                                                                                                    ; main                ; work         ;
+;    |buffer:buf_fm|                             ; 51 (51)             ; 63 (63)                   ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_fm                                                                                                      ; buffer              ; work         ;
+;       |altsyncram:mem_rtl_0|                   ; 0 (0)               ; 0 (0)                     ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_fm|altsyncram:mem_rtl_0                                                                                 ; altsyncram          ; work         ;
+;          |altsyncram_77d1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_fm|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated                                                  ; altsyncram_77d1     ; work         ;
+;    |buffer:buf_sine|                           ; 47 (47)             ; 45 (45)                   ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_sine                                                                                                    ; buffer              ; work         ;
 ;       |altsyncram:mem_rtl_0|                   ; 0 (0)               ; 0 (0)                     ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_sine|altsyncram:mem_rtl_0                                                                               ; altsyncram          ; work         ;
 ;          |altsyncram_77d1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_sine|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated                                                ; altsyncram_77d1     ; work         ;
-;    |buffer:buf_square|                         ; 37 (37)             ; 45 (45)                   ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_square                                                                                                  ; buffer              ; work         ;
+;    |buffer:buf_square|                         ; 36 (36)             ; 45 (45)                   ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_square                                                                                                  ; buffer              ; work         ;
 ;       |altsyncram:mem_rtl_0|                   ; 0 (0)               ; 0 (0)                     ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_square|altsyncram:mem_rtl_0                                                                             ; altsyncram          ; work         ;
 ;          |altsyncram_77d1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_square|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated                                              ; altsyncram_77d1     ; work         ;
 ;    |buffer:buf_triangle|                       ; 31 (31)             ; 45 (45)                   ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|buffer:buf_triangle                                                                                                ; buffer              ; work         ;
@@ -375,6 +384,7 @@ refer to the applicable agreement for further details.
 ;             |mpar_add:padder|                  ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|fir_filter:u_fir|lpm_mult:Mult5|multcore:mult_core|mpar_add:padder                                                 ; mpar_add            ; work         ;
 ;                |lpm_add_sub:adder[0]|          ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|fir_filter:u_fir|lpm_mult:Mult5|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub         ; work         ;
 ;                   |add_sub_1qg:auto_generated| ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|fir_filter:u_fir|lpm_mult:Mult5|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_1qg:auto_generated ; add_sub_1qg         ; work         ;
+;    |fm_wave_gen1u:u_fm|                        ; 679 (679)           ; 12 (12)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|fm_wave_gen1u:u_fm                                                                                                 ; fm_wave_gen1u       ; work         ;
 ;    |hex_decoder:h0|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|hex_decoder:h0                                                                                                     ; hex_decoder         ; work         ;
 ;    |hex_decoder:h1|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|hex_decoder:h1                                                                                                     ; hex_decoder         ; work         ;
 ;    |hex_decoder:h2|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|hex_decoder:h2                                                                                                     ; hex_decoder         ; work         ;
@@ -418,14 +428,14 @@ refer to the applicable agreement for further details.
 ;          |lpm_divide_bkl:auto_generated|       ; 51 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|hex_display:u_disp|lpm_divide:Mod4|lpm_divide_bkl:auto_generated                                                   ; lpm_divide_bkl      ; work         ;
 ;             |sign_div_unsign_akh:divider|      ; 51 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|hex_display:u_disp|lpm_divide:Mod4|lpm_divide_bkl:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
 ;                |alt_u_div_uee:divider|         ; 51 (51)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|hex_display:u_disp|lpm_divide:Mod4|lpm_divide_bkl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_uee:divider ; alt_u_div_uee       ; work         ;
-;    |ma_filter:u_ma|                            ; 432 (298)           ; 85 (85)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ma_filter:u_ma                                                                                                     ; ma_filter           ; work         ;
-;       |lpm_divide:Div0|                        ; 134 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ma_filter:u_ma|lpm_divide:Div0                                                                                     ; lpm_divide          ; work         ;
-;          |lpm_divide_ntl:auto_generated|       ; 134 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ma_filter:u_ma|lpm_divide:Div0|lpm_divide_ntl:auto_generated                                                       ; lpm_divide_ntl      ; work         ;
-;             |sign_div_unsign_plh:divider|      ; 134 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ma_filter:u_ma|lpm_divide:Div0|lpm_divide_ntl:auto_generated|sign_div_unsign_plh:divider                           ; sign_div_unsign_plh ; work         ;
-;                |alt_u_div_she:divider|         ; 134 (134)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ma_filter:u_ma|lpm_divide:Div0|lpm_divide_ntl:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider     ; alt_u_div_she       ; work         ;
-;    |triangle_wave_gen:u_triangle|              ; 132 (132)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|triangle_wave_gen:u_triangle                                                                                       ; triangle_wave_gen   ; work         ;
+;    |ma_filter:u_ma|                            ; 458 (316)           ; 77 (77)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ma_filter:u_ma                                                                                                     ; ma_filter           ; work         ;
+;       |lpm_divide:Div0|                        ; 142 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ma_filter:u_ma|lpm_divide:Div0                                                                                     ; lpm_divide          ; work         ;
+;          |lpm_divide_ntl:auto_generated|       ; 142 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ma_filter:u_ma|lpm_divide:Div0|lpm_divide_ntl:auto_generated                                                       ; lpm_divide_ntl      ; work         ;
+;             |sign_div_unsign_plh:divider|      ; 142 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ma_filter:u_ma|lpm_divide:Div0|lpm_divide_ntl:auto_generated|sign_div_unsign_plh:divider                           ; sign_div_unsign_plh ; work         ;
+;                |alt_u_div_she:divider|         ; 142 (142)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|ma_filter:u_ma|lpm_divide:Div0|lpm_divide_ntl:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider     ; alt_u_div_she       ; work         ;
+;    |triangle_wave_gen:u_triangle|              ; 133 (133)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|triangle_wave_gen:u_triangle                                                                                       ; triangle_wave_gen   ; work         ;
 ;    |uart_rxv2:u_rx|                            ; 129 (129)           ; 75 (75)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|uart_rxv2:u_rx                                                                                                     ; uart_rxv2           ; work         ;
-;    |uart_tx:u_tx|                              ; 108 (108)           ; 66 (66)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|uart_tx:u_tx                                                                                                       ; uart_tx             ; work         ;
+;    |uart_tx:u_tx|                              ; 110 (110)           ; 66 (66)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|uart_tx:u_tx                                                                                                       ; uart_tx             ; work         ;
 +------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -435,6 +445,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 ; Name                                                                               ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
 +------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; buffer:buf_fm|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated|ALTSYNCRAM       ; AUTO ; Simple Dual Port ; 512          ; 8            ; 512          ; 8            ; 4096 ; None ;
 ; buffer:buf_sine|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 512          ; 8            ; 512          ; 8            ; 4096 ; None ;
 ; buffer:buf_square|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated|ALTSYNCRAM   ; AUTO ; Simple Dual Port ; 512          ; 8            ; 512          ; 8            ; 4096 ; None ;
 ; buffer:buf_triangle|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 512          ; 8            ; 512          ; 8            ; 4096 ; None ;
@@ -472,6 +483,14 @@ Encoding Type:  One-Hot
 +-----------------------------------------+-----------------------------------------------+
 ; Register name                           ; Reason for Removal                            ;
 +-----------------------------------------+-----------------------------------------------+
+; ma_filter:u_ma|shift_reg[29][0]         ; Lost fanout                                   ;
+; ma_filter:u_ma|shift_reg[29][1]         ; Lost fanout                                   ;
+; ma_filter:u_ma|shift_reg[29][2]         ; Lost fanout                                   ;
+; ma_filter:u_ma|shift_reg[29][3]         ; Lost fanout                                   ;
+; ma_filter:u_ma|shift_reg[29][4]         ; Lost fanout                                   ;
+; ma_filter:u_ma|shift_reg[29][5]         ; Lost fanout                                   ;
+; ma_filter:u_ma|shift_reg[29][6]         ; Lost fanout                                   ;
+; ma_filter:u_ma|shift_reg[29][7]         ; Lost fanout                                   ;
 ; ma_filter:u_ma|shift_reg[0][7]          ; Merged with fir_filter:u_fir|shift_reg[0][7]  ;
 ; ma_filter:u_ma|shift_reg[0][6]          ; Merged with fir_filter:u_fir|shift_reg[0][6]  ;
 ; ma_filter:u_ma|shift_reg[0][5]          ; Merged with fir_filter:u_fir|shift_reg[0][5]  ;
@@ -632,51 +651,70 @@ Encoding Type:  One-Hot
 ; ma_filter:u_ma|shift_reg[19][2]         ; Merged with fir_filter:u_fir|shift_reg[19][2] ;
 ; ma_filter:u_ma|shift_reg[19][1]         ; Merged with fir_filter:u_fir|shift_reg[19][1] ;
 ; ma_filter:u_ma|shift_reg[19][0]         ; Merged with fir_filter:u_fir|shift_reg[19][0] ;
-; buffer:buf_square|count[9]              ; Merged with buffer:buf_sine|count[9]          ;
-; buffer:buf_triangle|count[9]            ; Merged with buffer:buf_sine|count[9]          ;
-; buffer:buf_square|wr_ptr[8]             ; Merged with buffer:buf_sine|wr_ptr[8]         ;
-; buffer:buf_triangle|wr_ptr[8]           ; Merged with buffer:buf_sine|wr_ptr[8]         ;
-; buffer:buf_square|count[8]              ; Merged with buffer:buf_sine|count[8]          ;
-; buffer:buf_triangle|count[8]            ; Merged with buffer:buf_sine|count[8]          ;
-; buffer:buf_square|wr_ptr[7]             ; Merged with buffer:buf_sine|wr_ptr[7]         ;
-; buffer:buf_triangle|wr_ptr[7]           ; Merged with buffer:buf_sine|wr_ptr[7]         ;
-; buffer:buf_square|count[7]              ; Merged with buffer:buf_sine|count[7]          ;
-; buffer:buf_triangle|count[7]            ; Merged with buffer:buf_sine|count[7]          ;
-; buffer:buf_square|wr_ptr[6]             ; Merged with buffer:buf_sine|wr_ptr[6]         ;
-; buffer:buf_triangle|wr_ptr[6]           ; Merged with buffer:buf_sine|wr_ptr[6]         ;
-; buffer:buf_square|count[6]              ; Merged with buffer:buf_sine|count[6]          ;
-; buffer:buf_triangle|count[6]            ; Merged with buffer:buf_sine|count[6]          ;
-; buffer:buf_square|wr_ptr[5]             ; Merged with buffer:buf_sine|wr_ptr[5]         ;
-; buffer:buf_triangle|wr_ptr[5]           ; Merged with buffer:buf_sine|wr_ptr[5]         ;
-; buffer:buf_square|count[5]              ; Merged with buffer:buf_sine|count[5]          ;
-; buffer:buf_triangle|count[5]            ; Merged with buffer:buf_sine|count[5]          ;
-; buffer:buf_square|wr_ptr[4]             ; Merged with buffer:buf_sine|wr_ptr[4]         ;
-; buffer:buf_triangle|wr_ptr[4]           ; Merged with buffer:buf_sine|wr_ptr[4]         ;
-; buffer:buf_square|count[4]              ; Merged with buffer:buf_sine|count[4]          ;
-; buffer:buf_triangle|count[4]            ; Merged with buffer:buf_sine|count[4]          ;
-; buffer:buf_square|wr_ptr[3]             ; Merged with buffer:buf_sine|wr_ptr[3]         ;
-; buffer:buf_triangle|wr_ptr[3]           ; Merged with buffer:buf_sine|wr_ptr[3]         ;
-; buffer:buf_square|count[3]              ; Merged with buffer:buf_sine|count[3]          ;
-; buffer:buf_triangle|count[3]            ; Merged with buffer:buf_sine|count[3]          ;
-; buffer:buf_square|wr_ptr[2]             ; Merged with buffer:buf_sine|wr_ptr[2]         ;
-; buffer:buf_triangle|wr_ptr[2]           ; Merged with buffer:buf_sine|wr_ptr[2]         ;
-; buffer:buf_square|count[2]              ; Merged with buffer:buf_sine|count[2]          ;
-; buffer:buf_triangle|count[2]            ; Merged with buffer:buf_sine|count[2]          ;
-; buffer:buf_square|wr_ptr[1]             ; Merged with buffer:buf_sine|wr_ptr[1]         ;
-; buffer:buf_triangle|wr_ptr[1]           ; Merged with buffer:buf_sine|wr_ptr[1]         ;
-; buffer:buf_square|count[1]              ; Merged with buffer:buf_sine|count[1]          ;
-; buffer:buf_triangle|count[1]            ; Merged with buffer:buf_sine|count[1]          ;
-; buffer:buf_square|wr_ptr[0]             ; Merged with buffer:buf_sine|wr_ptr[0]         ;
-; buffer:buf_triangle|wr_ptr[0]           ; Merged with buffer:buf_sine|wr_ptr[0]         ;
-; buffer:buf_square|count[0]              ; Merged with buffer:buf_sine|count[0]          ;
-; buffer:buf_triangle|count[0]            ; Merged with buffer:buf_sine|count[0]          ;
-; buffer:buf_sine|count[0]                ; Merged with buffer:buf_sine|wr_ptr[0]         ;
+; buffer:buf_sine|count[9]                ; Merged with buffer:buf_fm|count[9]            ;
+; buffer:buf_square|count[9]              ; Merged with buffer:buf_fm|count[9]            ;
+; buffer:buf_triangle|count[9]            ; Merged with buffer:buf_fm|count[9]            ;
+; buffer:buf_sine|count[8]                ; Merged with buffer:buf_fm|count[8]            ;
+; buffer:buf_square|count[8]              ; Merged with buffer:buf_fm|count[8]            ;
+; buffer:buf_triangle|count[8]            ; Merged with buffer:buf_fm|count[8]            ;
+; buffer:buf_sine|count[7]                ; Merged with buffer:buf_fm|count[7]            ;
+; buffer:buf_square|count[7]              ; Merged with buffer:buf_fm|count[7]            ;
+; buffer:buf_triangle|count[7]            ; Merged with buffer:buf_fm|count[7]            ;
+; buffer:buf_sine|count[6]                ; Merged with buffer:buf_fm|count[6]            ;
+; buffer:buf_square|count[6]              ; Merged with buffer:buf_fm|count[6]            ;
+; buffer:buf_triangle|count[6]            ; Merged with buffer:buf_fm|count[6]            ;
+; buffer:buf_sine|count[5]                ; Merged with buffer:buf_fm|count[5]            ;
+; buffer:buf_square|count[5]              ; Merged with buffer:buf_fm|count[5]            ;
+; buffer:buf_triangle|count[5]            ; Merged with buffer:buf_fm|count[5]            ;
+; buffer:buf_sine|count[4]                ; Merged with buffer:buf_fm|count[4]            ;
+; buffer:buf_square|count[4]              ; Merged with buffer:buf_fm|count[4]            ;
+; buffer:buf_triangle|count[4]            ; Merged with buffer:buf_fm|count[4]            ;
+; buffer:buf_sine|count[3]                ; Merged with buffer:buf_fm|count[3]            ;
+; buffer:buf_square|count[3]              ; Merged with buffer:buf_fm|count[3]            ;
+; buffer:buf_triangle|count[3]            ; Merged with buffer:buf_fm|count[3]            ;
+; buffer:buf_sine|count[2]                ; Merged with buffer:buf_fm|count[2]            ;
+; buffer:buf_square|count[2]              ; Merged with buffer:buf_fm|count[2]            ;
+; buffer:buf_triangle|count[2]            ; Merged with buffer:buf_fm|count[2]            ;
+; buffer:buf_sine|count[1]                ; Merged with buffer:buf_fm|count[1]            ;
+; buffer:buf_square|count[1]              ; Merged with buffer:buf_fm|count[1]            ;
+; buffer:buf_triangle|count[1]            ; Merged with buffer:buf_fm|count[1]            ;
+; buffer:buf_sine|count[0]                ; Merged with buffer:buf_fm|count[0]            ;
+; buffer:buf_square|count[0]              ; Merged with buffer:buf_fm|count[0]            ;
+; buffer:buf_triangle|count[0]            ; Merged with buffer:buf_fm|count[0]            ;
+; buffer:buf_sine|wr_ptr[0]               ; Merged with buffer:buf_fm|wr_ptr[0]           ;
+; buffer:buf_square|wr_ptr[0]             ; Merged with buffer:buf_fm|wr_ptr[0]           ;
+; buffer:buf_triangle|wr_ptr[0]           ; Merged with buffer:buf_fm|wr_ptr[0]           ;
+; buffer:buf_sine|wr_ptr[1]               ; Merged with buffer:buf_fm|wr_ptr[1]           ;
+; buffer:buf_square|wr_ptr[1]             ; Merged with buffer:buf_fm|wr_ptr[1]           ;
+; buffer:buf_triangle|wr_ptr[1]           ; Merged with buffer:buf_fm|wr_ptr[1]           ;
+; buffer:buf_sine|wr_ptr[2]               ; Merged with buffer:buf_fm|wr_ptr[2]           ;
+; buffer:buf_square|wr_ptr[2]             ; Merged with buffer:buf_fm|wr_ptr[2]           ;
+; buffer:buf_triangle|wr_ptr[2]           ; Merged with buffer:buf_fm|wr_ptr[2]           ;
+; buffer:buf_sine|wr_ptr[3]               ; Merged with buffer:buf_fm|wr_ptr[3]           ;
+; buffer:buf_square|wr_ptr[3]             ; Merged with buffer:buf_fm|wr_ptr[3]           ;
+; buffer:buf_triangle|wr_ptr[3]           ; Merged with buffer:buf_fm|wr_ptr[3]           ;
+; buffer:buf_sine|wr_ptr[4]               ; Merged with buffer:buf_fm|wr_ptr[4]           ;
+; buffer:buf_square|wr_ptr[4]             ; Merged with buffer:buf_fm|wr_ptr[4]           ;
+; buffer:buf_triangle|wr_ptr[4]           ; Merged with buffer:buf_fm|wr_ptr[4]           ;
+; buffer:buf_sine|wr_ptr[5]               ; Merged with buffer:buf_fm|wr_ptr[5]           ;
+; buffer:buf_square|wr_ptr[5]             ; Merged with buffer:buf_fm|wr_ptr[5]           ;
+; buffer:buf_triangle|wr_ptr[5]           ; Merged with buffer:buf_fm|wr_ptr[5]           ;
+; buffer:buf_sine|wr_ptr[6]               ; Merged with buffer:buf_fm|wr_ptr[6]           ;
+; buffer:buf_square|wr_ptr[6]             ; Merged with buffer:buf_fm|wr_ptr[6]           ;
+; buffer:buf_triangle|wr_ptr[6]           ; Merged with buffer:buf_fm|wr_ptr[6]           ;
+; buffer:buf_sine|wr_ptr[7]               ; Merged with buffer:buf_fm|wr_ptr[7]           ;
+; buffer:buf_square|wr_ptr[7]             ; Merged with buffer:buf_fm|wr_ptr[7]           ;
+; buffer:buf_triangle|wr_ptr[7]           ; Merged with buffer:buf_fm|wr_ptr[7]           ;
+; buffer:buf_sine|wr_ptr[8]               ; Merged with buffer:buf_fm|wr_ptr[8]           ;
+; buffer:buf_square|wr_ptr[8]             ; Merged with buffer:buf_fm|wr_ptr[8]           ;
+; buffer:buf_triangle|wr_ptr[8]           ; Merged with buffer:buf_fm|wr_ptr[8]           ;
+; buffer:buf_fm|count[0]                  ; Merged with buffer:buf_fm|wr_ptr[0]           ;
 ; uart_tx:u_tx|state~6                    ; Lost fanout                                   ;
 ; uart_tx:u_tx|state~7                    ; Lost fanout                                   ;
 ; uart_tx:u_tx|state~8                    ; Lost fanout                                   ;
 ; uart_rxv2:u_rx|state~6                  ; Lost fanout                                   ;
 ; uart_rxv2:u_rx|state~7                  ; Lost fanout                                   ;
-; Total Number of Removed Registers = 204 ;                                               ;
+; Total Number of Removed Registers = 231 ;                                               ;
 +-----------------------------------------+-----------------------------------------------+
 
 
@@ -685,12 +723,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 550   ;
+; Total registers                              ; 599   ;
 ; Number of registers using Synchronous Clear  ; 96    ;
-; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 325   ;
+; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Asynchronous Clear ; 348   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 397   ;
+; Number of registers using Clock Enable       ; 424   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -781,29 +819,57 @@ Encoding Type:  One-Hot
 ; buffer:buf_triangle|mem_rtl_0_bypass[24] ; buffer:buf_triangle|mem_rtl_0 ;
 ; buffer:buf_triangle|mem_rtl_0_bypass[25] ; buffer:buf_triangle|mem_rtl_0 ;
 ; buffer:buf_triangle|mem_rtl_0_bypass[26] ; buffer:buf_triangle|mem_rtl_0 ;
+; buffer:buf_fm|mem_rtl_0_bypass[0]        ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[1]        ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[2]        ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[3]        ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[4]        ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[5]        ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[6]        ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[7]        ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[8]        ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[9]        ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[10]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[11]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[12]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[13]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[14]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[15]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[16]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[17]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[18]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[19]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[20]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[21]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[22]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[23]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[24]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[25]       ; buffer:buf_fm|mem_rtl_0       ;
+; buffer:buf_fm|mem_rtl_0_bypass[26]       ; buffer:buf_fm|mem_rtl_0       ;
 +------------------------------------------+-------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |main|uart_rxv2:u_rx|recv_count[14]   ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |main|uart_rxv2:u_rx|rx_latch[2]      ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |main|uart_rxv2:u_rx|watchdog_cnt[14] ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|uart_tx:u_tx|watchdog_cnt[13]   ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |main|uart_tx:u_tx|baud_cnt[13]       ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |main|uart_tx:u_tx|bit_idx[0]         ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |main|uart_rxv2:u_rx|baud_cnt[12]     ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |main|uart_tx:u_tx|tx_shift[1]        ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main|uart_rxv2:u_rx|bit_cnt          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main|buff_input[3]                   ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |main|Mux2                            ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; No         ; |main|Mux8                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |main|uart_tx:u_tx|state              ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main|uart_rxv2:u_rx|state            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |main|uart_rxv2:u_rx|recv_count[12]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |main|uart_rxv2:u_rx|rx_latch[2]     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |main|uart_rxv2:u_rx|watchdog_cnt[0] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|uart_tx:u_tx|watchdog_cnt[17]  ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |main|uart_tx:u_tx|baud_cnt[12]      ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |main|uart_tx:u_tx|bit_idx[0]        ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |main|uart_rxv2:u_rx|baud_cnt[7]     ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |main|uart_tx:u_tx|tx_shift[4]       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main|uart_rxv2:u_rx|bit_cnt         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |main|ma_filter:u_ma|next_count[3]   ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; No         ; |main|Mux0                           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main|buff_input[7]                  ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |main|Mux8                           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |main|uart_tx:u_tx|state             ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main|uart_rxv2:u_rx|state           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------+
@@ -831,6 +897,15 @@ Encoding Type:  One-Hot
 +---------------------------------+--------------------+------+----------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                ;
 +---------------------------------+--------------------+------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Source assignments for buffer:buf_fm|altsyncram:mem_rtl_0|altsyncram_77d1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------+
+; Assignment                      ; Value              ; From ; To                         ;
++---------------------------------+--------------------+------+----------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                          ;
++---------------------------------+--------------------+------+----------------------------+
 
 
 +-------------------------------------------------------------+
@@ -896,6 +971,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; DEPTH          ; 512   ; Signed Integer                          ;
 ; ADDR_WIDTH     ; 9     ; Signed Integer                          ;
 +----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: buffer:buf_fm ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; DEPTH          ; 512   ; Signed Integer                    ;
+; ADDR_WIDTH     ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1090,6 +1176,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                       ;
 ; CBXI_PARAMETER                     ; altsyncram_77d1      ; Untyped                       ;
 +------------------------------------+----------------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: buffer:buf_fm|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+-------------------------+
+; Parameter Name                     ; Value                ; Type                    ;
++------------------------------------+----------------------+-------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                 ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY              ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY            ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE            ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE          ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                 ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                 ;
+; WIDTH_A                            ; 8                    ; Untyped                 ;
+; WIDTHAD_A                          ; 9                    ; Untyped                 ;
+; NUMWORDS_A                         ; 512                  ; Untyped                 ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                 ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                 ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                 ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                 ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                 ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                 ;
+; WIDTH_B                            ; 8                    ; Untyped                 ;
+; WIDTHAD_B                          ; 9                    ; Untyped                 ;
+; NUMWORDS_B                         ; 512                  ; Untyped                 ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                 ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                 ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                 ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                 ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                 ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                 ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                 ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                 ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                 ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                 ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                 ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                 ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                 ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                 ;
+; BYTE_SIZE                          ; 8                    ; Untyped                 ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                 ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                 ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                 ;
+; INIT_FILE                          ; UNUSED               ; Untyped                 ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                 ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                 ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                 ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                 ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                 ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                 ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                 ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                 ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                 ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                 ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                 ;
+; DEVICE_FAMILY                      ; MAX 10               ; Untyped                 ;
+; CBXI_PARAMETER                     ; altsyncram_77d1      ; Untyped                 ;
++------------------------------------+----------------------+-------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1561,7 +1708,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+------------------------------------------+
 ; Name                                      ; Value                                    ;
 +-------------------------------------------+------------------------------------------+
-; Number of entity instances                ; 3                                        ;
+; Number of entity instances                ; 4                                        ;
 ; Entity Instance                           ; buffer:buf_sine|altsyncram:mem_rtl_0     ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                ;
 ;     -- WIDTH_A                            ; 8                                        ;
@@ -1585,6 +1732,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                     ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                ;
 ; Entity Instance                           ; buffer:buf_triangle|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                ;
+;     -- WIDTH_A                            ; 8                                        ;
+;     -- NUMWORDS_A                         ; 512                                      ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                             ;
+;     -- WIDTH_B                            ; 8                                        ;
+;     -- NUMWORDS_B                         ; 512                                      ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                   ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                             ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                     ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                ;
+; Entity Instance                           ; buffer:buf_fm|altsyncram:mem_rtl_0       ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                ;
 ;     -- WIDTH_A                            ; 8                                        ;
 ;     -- NUMWORDS_A                         ; 512                                      ;
@@ -1693,6 +1851,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "buffer:buf_fm"                                                                            ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; empty      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; full       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; wr_ptr_dbg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rd_ptr_dbg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; count_dbg  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "buffer:buf_triangle"                                                                      ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port       ; Type   ; Severity ; Details                                                                             ;
@@ -1712,18 +1883,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 ; wr_ptr_dbg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; rd_ptr_dbg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; count_dbg  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "buffer:buf_sine"                                                                         ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; empty     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; full      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; count_dbg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "buffer:buf_sine"                                                                          ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; empty      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; full       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; wr_ptr_dbg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rd_ptr_dbg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; count_dbg  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -1732,30 +1906,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 65                          ;
-; cycloneiii_ff         ; 550                         ;
-;     CLR               ; 3                           ;
-;     ENA               ; 35                          ;
-;     ENA CLR           ; 322                         ;
+; cycloneiii_ff         ; 599                         ;
+;     CLR               ; 7                           ;
+;     ENA               ; 43                          ;
+;     ENA CLR           ; 331                         ;
+;     ENA CLR SLD       ; 10                          ;
 ;     ENA SCLR          ; 32                          ;
 ;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 64                          ;
 ;     SLD               ; 2                           ;
-;     plain             ; 84                          ;
-; cycloneiii_lcell_comb ; 2849                        ;
-;     arith             ; 1179                        ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 250                         ;
-;         3 data inputs ; 927                         ;
-;     normal            ; 1670                        ;
-;         0 data inputs ; 104                         ;
-;         1 data inputs ; 41                          ;
-;         2 data inputs ; 644                         ;
-;         3 data inputs ; 83                          ;
-;         4 data inputs ; 798                         ;
-; cycloneiii_ram_block  ; 24                          ;
+;     plain             ; 102                         ;
+; cycloneiii_lcell_comb ; 3595                        ;
+;     arith             ; 1225                        ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 266                         ;
+;         3 data inputs ; 958                         ;
+;     normal            ; 2370                        ;
+;         0 data inputs ; 107                         ;
+;         1 data inputs ; 43                          ;
+;         2 data inputs ; 621                         ;
+;         3 data inputs ; 207                         ;
+;         4 data inputs ; 1392                        ;
+; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 110.10                      ;
-; Average LUT depth     ; 81.22                       ;
+; Max LUT depth         ; 108.10                      ;
+; Average LUT depth     ; 74.21                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1764,7 +1939,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:34     ;
 +----------------+--------------+
 
 
@@ -1774,18 +1949,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 16 18:16:31 2025
+    Info: Processing started: Sun May 18 23:14:00 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proj -c proj
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file fm_wave_gen1u.sv
+    Info (12023): Found entity 1: fm_wave_gen1u File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file triangle_wave_gen.sv
     Info (12023): Found entity 1: triangle_wave_gen File: D:/YeeXun/ECE4063/4063proj/triangle_wave_gen.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file square_wave_gen.sv
     Info (12023): Found entity 1: square_wave_gen File: D:/YeeXun/ECE4063/4063proj/square_wave_gen.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file main_rfbt_loopback.sv
-    Info (12023): Found entity 1: main_rfbt_loopback File: D:/YeeXun/ECE4063/4063proj/main_rfbt_loopback.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file main_rt_loopback.sv
-    Info (12023): Found entity 1: main_rt_loopback File: D:/YeeXun/ECE4063/4063proj/main_rt_loopback.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ma_filter.sv
     Info (12023): Found entity 1: ma_filter File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file fir_filter.sv
@@ -1802,17 +1975,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file buffer.
     Info (12023): Found entity 1: buffer File: D:/YeeXun/ECE4063/4063proj/buffer.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.sv
     Info (12023): Found entity 1: uart_tx File: D:/YeeXun/ECE4063/4063proj/uart_tx.sv Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file main_rbt_loopback.sv
-    Info (12023): Found entity 1: main_rbt_loopback File: D:/YeeXun/ECE4063/4063proj/main_rbt_loopback.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file main_rft_loopback.sv
-    Info (12023): Found entity 1: main_rft_loopback File: D:/YeeXun/ECE4063/4063proj/main_rft_loopback.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file main_rfbst_loopback.sv
-    Info (12023): Found entity 1: main_rfbst_loopback File: D:/YeeXun/ECE4063/4063proj/main_rfbst_loopback.sv Line: 1
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at main.sv(221): truncated value with size 32 to match size of target (3) File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 221
-Warning (10230): Verilog HDL assignment warning at main.sv(231): truncated value with size 32 to match size of target (24) File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 231
-Warning (10230): Verilog HDL assignment warning at main.sv(233): truncated value with size 25 to match size of target (24) File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 233
-Warning (10230): Verilog HDL assignment warning at main.sv(234): truncated value with size 25 to match size of target (24) File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 234
+Warning (10230): Verilog HDL assignment warning at main.sv(258): truncated value with size 32 to match size of target (3) File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 258
+Warning (10230): Verilog HDL assignment warning at main.sv(268): truncated value with size 32 to match size of target (24) File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 268
 Info (12128): Elaborating entity "uart_rxv2" for hierarchy "uart_rxv2:u_rx" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 32
 Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(52): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv Line: 52
 Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(75): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv Line: 75
@@ -1822,26 +1987,35 @@ Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(100): truncated 
 Warning (10230): Verilog HDL assignment warning at uart_rxv2.sv(104): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_rxv2.sv Line: 104
 Info (12128): Elaborating entity "ma_filter" for hierarchy "ma_filter:u_ma" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 48
 Warning (10230): Verilog HDL assignment warning at ma_filter.sv(33): truncated value with size 32 to match size of target (5) File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 33
-Warning (10230): Verilog HDL assignment warning at ma_filter.sv(51): truncated value with size 32 to match size of target (8) File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 51
+Warning (10230): Verilog HDL assignment warning at ma_filter.sv(56): truncated value with size 32 to match size of target (5) File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at ma_filter.sv(62): truncated value with size 14 to match size of target (8) File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 62
 Info (12128): Elaborating entity "fir_filter" for hierarchy "fir_filter:u_fir" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 64
 Warning (10230): Verilog HDL assignment warning at fir_filter.sv(39): truncated value with size 32 to match size of target (5) File: D:/YeeXun/ECE4063/4063proj/fir_filter.sv Line: 39
 Warning (10230): Verilog HDL assignment warning at fir_filter.sv(47): truncated value with size 32 to match size of target (17) File: D:/YeeXun/ECE4063/4063proj/fir_filter.sv Line: 47
 Warning (10230): Verilog HDL assignment warning at fir_filter.sv(58): truncated value with size 32 to match size of target (8) File: D:/YeeXun/ECE4063/4063proj/fir_filter.sv Line: 58
-Info (12128): Elaborating entity "square_wave_gen" for hierarchy "square_wave_gen:u_square" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 91
-Info (12128): Elaborating entity "triangle_wave_gen" for hierarchy "triangle_wave_gen:u_triangle" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 96
+Info (12128): Elaborating entity "square_wave_gen" for hierarchy "square_wave_gen:u_square" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 92
+Info (12128): Elaborating entity "triangle_wave_gen" for hierarchy "triangle_wave_gen:u_triangle" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 97
 Warning (10030): Net "TRI_LUT.data_a" at triangle_wave_gen.sv(9) has no driver or initial value, using a default initial value '0' File: D:/YeeXun/ECE4063/4063proj/triangle_wave_gen.sv Line: 9
 Warning (10030): Net "TRI_LUT.waddr_a" at triangle_wave_gen.sv(9) has no driver or initial value, using a default initial value '0' File: D:/YeeXun/ECE4063/4063proj/triangle_wave_gen.sv Line: 9
 Warning (10030): Net "TRI_LUT.we_a" at triangle_wave_gen.sv(9) has no driver or initial value, using a default initial value '0' File: D:/YeeXun/ECE4063/4063proj/triangle_wave_gen.sv Line: 9
-Info (12128): Elaborating entity "buffer" for hierarchy "buffer:buf_sine" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 121
+Info (12128): Elaborating entity "fm_wave_gen1u" for hierarchy "fm_wave_gen1u:u_fm" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 105
+Warning (10230): Verilog HDL assignment warning at fm_wave_gen1u.sv(2068): truncated value with size 32 to match size of target (12) File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 2068
+Warning (10030): Net "SINE_LUT.data_a" at fm_wave_gen1u.sv(11) has no driver or initial value, using a default initial value '0' File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 11
+Warning (10030): Net "SINE_LUT.waddr_a" at fm_wave_gen1u.sv(11) has no driver or initial value, using a default initial value '0' File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 11
+Warning (10030): Net "STEP_LUT.data_a" at fm_wave_gen1u.sv(12) has no driver or initial value, using a default initial value '0' File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 12
+Warning (10030): Net "STEP_LUT.waddr_a" at fm_wave_gen1u.sv(12) has no driver or initial value, using a default initial value '0' File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 12
+Warning (10030): Net "SINE_LUT.we_a" at fm_wave_gen1u.sv(11) has no driver or initial value, using a default initial value '0' File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 11
+Warning (10030): Net "STEP_LUT.we_a" at fm_wave_gen1u.sv(12) has no driver or initial value, using a default initial value '0' File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 12
+Info (12128): Elaborating entity "buffer" for hierarchy "buffer:buf_sine" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 130
 Warning (10230): Verilog HDL assignment warning at buffer.sv(51): truncated value with size 32 to match size of target (9) File: D:/YeeXun/ECE4063/4063proj/buffer.sv Line: 51
 Warning (10230): Verilog HDL assignment warning at buffer.sv(52): truncated value with size 32 to match size of target (10) File: D:/YeeXun/ECE4063/4063proj/buffer.sv Line: 52
 Warning (10230): Verilog HDL assignment warning at buffer.sv(66): truncated value with size 32 to match size of target (9) File: D:/YeeXun/ECE4063/4063proj/buffer.sv Line: 66
-Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:u_tx" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 212
+Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:u_tx" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 249
 Warning (10230): Verilog HDL assignment warning at uart_tx.sv(88): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_tx.sv Line: 88
 Warning (10230): Verilog HDL assignment warning at uart_tx.sv(99): truncated value with size 32 to match size of target (3) File: D:/YeeXun/ECE4063/4063proj/uart_tx.sv Line: 99
 Warning (10230): Verilog HDL assignment warning at uart_tx.sv(102): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_tx.sv Line: 102
 Warning (10230): Verilog HDL assignment warning at uart_tx.sv(112): truncated value with size 32 to match size of target (16) File: D:/YeeXun/ECE4063/4063proj/uart_tx.sv Line: 112
-Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:u_disp" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 248
+Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:u_disp" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 285
 Warning (10230): Verilog HDL assignment warning at hex_display.sv(16): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 16
 Warning (10230): Verilog HDL assignment warning at hex_display.sv(17): truncated value with size 32 to match size of target (24) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 17
 Warning (10230): Verilog HDL assignment warning at hex_display.sv(19): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 19
@@ -1852,13 +2026,17 @@ Warning (10230): Verilog HDL assignment warning at hex_display.sv(25): truncated
 Warning (10230): Verilog HDL assignment warning at hex_display.sv(26): truncated value with size 32 to match size of target (24) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 26
 Warning (10230): Verilog HDL assignment warning at hex_display.sv(28): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 28
 Warning (10230): Verilog HDL assignment warning at hex_display.sv(29): truncated value with size 32 to match size of target (4) File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 29
-Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:h0" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 250
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:h0" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 287
+Critical Warning (127005): Memory depth (2048) in the design file differs from memory depth (1780) in the Memory Initialization File "D:/YeeXun/ECE4063/4063proj/db/proj.ram1_fm_wave_gen1u_b3e918ea.hdl.mif" -- setting initial value for remaining addresses to 0
 Warning (276020): Inferred RAM node "buffer:buf_sine|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276020): Inferred RAM node "buffer:buf_square|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276020): Inferred RAM node "buffer:buf_triangle|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
-Info (276014): Found 1 instances of uninferred RAM logic
+Warning (276020): Inferred RAM node "buffer:buf_fm|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (276014): Found 3 instances of uninferred RAM logic
     Info (276013): RAM logic "triangle_wave_gen:u_triangle|TRI_LUT" is uninferred because MIF is not supported for the selected family File: D:/YeeXun/ECE4063/4063proj/triangle_wave_gen.sv Line: 9
-Info (19000): Inferred 3 megafunctions from design logic
+    Info (276013): RAM logic "fm_wave_gen1u:u_fm|SINE_LUT" is uninferred because MIF is not supported for the selected family File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 11
+    Info (276013): RAM logic "fm_wave_gen1u:u_fm|STEP_LUT" is uninferred because MIF is not supported for the selected family File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 12
+Info (19000): Inferred 4 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "buffer:buf_sine|mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 8
@@ -1904,9 +2082,24 @@ Info (19000): Inferred 3 megafunctions from design logic
         Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "buffer:buf_fm|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 9
+        Info (286033): Parameter NUMWORDS_A set to 512
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 9
+        Info (286033): Parameter NUMWORDS_B set to 512
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
 Info (278001): Inferred 17 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "fir_filter:u_fir|Div0" File: D:/YeeXun/ECE4063/4063proj/fir_filter.sv Line: 58
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ma_filter:u_ma|Div0" File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 51
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ma_filter:u_ma|Div0" File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 62
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Mod0" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 17
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Mod1" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 20
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "hex_display:u_disp|Mod2" File: D:/YeeXun/ECE4063/4063proj/hex_display.sv Line: 23
@@ -1956,8 +2149,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_t3c File: D:/YeeXun/ECE4063/4063proj/db/add_sub_t3c.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
     Info (12023): Found entity 1: add_sub_u3c File: D:/YeeXun/ECE4063/4063proj/db/add_sub_u3c.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "ma_filter:u_ma|lpm_divide:Div0" File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 51
-Info (12133): Instantiated megafunction "ma_filter:u_ma|lpm_divide:Div0" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 51
+Info (12130): Elaborated megafunction instantiation "ma_filter:u_ma|lpm_divide:Div0" File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 62
+Info (12133): Instantiated megafunction "ma_filter:u_ma|lpm_divide:Div0" with the following parameter: File: D:/YeeXun/ECE4063/4063proj/ma_filter.sv Line: 62
     Info (12134): Parameter "LPM_WIDTHN" = "14"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -2103,29 +2296,35 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LED[6]" is stuck at GND File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 13
     Warning (13410): Pin "LED[7]" is stuck at GND File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 13
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (17049): 13 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Mod0|lpm_divide_enl:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider|add_sub_20_result_int[4]~28" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_4le.tdf Line: 91
     Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Mod0|lpm_divide_enl:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider|add_sub_20_result_int[3]~30" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_4le.tdf Line: 91
     Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Mod0|lpm_divide_enl:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider|add_sub_20_result_int[2]~32" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_4le.tdf Line: 91
     Info (17048): Logic cell "hex_display:u_disp|lpm_divide:Mod0|lpm_divide_enl:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider|add_sub_20_result_int[1]~34" File: D:/YeeXun/ECE4063/4063proj/db/alt_u_div_4le.tdf Line: 91
+Info (144001): Generated suppressed messages file D:/YeeXun/ECE4063/4063proj/output_files/proj.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[2]" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 4
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[3]" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 4
     Warning (15610): No output dependent on input pin "SW[4]" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 4
     Warning (15610): No output dependent on input pin "SW[5]" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 4
     Warning (15610): No output dependent on input pin "dtr_n" File: D:/YeeXun/ECE4063/4063proj/main.sv Line: 6
-Info (21057): Implemented 3308 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4100 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 51 output pins
-    Info (21061): Implemented 3219 logic cells
-    Info (21064): Implemented 24 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 4872 megabytes
-    Info: Processing ended: Fri May 16 18:16:47 2025
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:09
+    Info (21061): Implemented 4003 logic cells
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 4891 megabytes
+    Info: Processing ended: Sun May 18 23:14:45 2025
+    Info: Elapsed time: 00:00:45
+    Info: Total CPU time (on all processors): 00:00:15
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/YeeXun/ECE4063/4063proj/output_files/proj.map.smsg.
 
 

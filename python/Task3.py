@@ -48,7 +48,7 @@ def transmit_and_receive(port, baudrate, csv_path, receive_enabled=True):
             ser.write(bytes([value]))
             time.sleep(TXDELAY)
             Tx_count += 1
-            print(f"Transmitted data: {value}", end="\t")
+            # print(f"Transmitted data: {value}", end="\t")
 
             if receive_enabled:
                 rx_byte = ser.read(size=1)
@@ -103,6 +103,6 @@ if __name__ == "__main__":
     TXDELAY = 0.0005
     baud = 115200
 
-    #preview_csv_plot(csv_file)
+    preview_csv_plot(csv_file)
     tx, rx = transmit_and_receive(port, baud, csv_file, receive_enabled=False)
     #plot_tx_rx(tx, rx)

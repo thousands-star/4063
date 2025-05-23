@@ -1,8 +1,0 @@
-* D:\YeeXun\ECE4063\4063proj\LTSpice\VoltageSourceWithNoise.asc
-V1 N001 0 SINE(0 5 1k 0 0 0 1)
-V2 Vnoisy N001 SINE(0 0.23 10.3k 0 0 61)
-R1 Vnoisy 0 50
-B1 Vquantised 0 V=floor(limit((V(Vnoisy) + 5)/10 * 255, 0, 255))
-.tran 0 1m 0 1u
-.backanno
-.end

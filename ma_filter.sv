@@ -10,45 +10,60 @@ module ma_filter #(
   output logic                 out_valid
 );
 
-  // Shift register to store last 5 samples
+  // (1) storage
   logic [WIDTH-1:0] shift_reg[0:DEPTH-1];
   logic [$clog2(DEPTH+1)-1:0] sample_count;
+  // comb sum of current contents
+  logic [WIDTH + $clog2(DEPTH):0] sum_reg;
 
-  // Register to hold computed average
-  logic [WIDTH+$clog2(DEPTH):0] sum;
-
+  // --- collect samples / bump count ---
   always_ff @(posedge clk or posedge rst) begin
     if (rst) begin
-      for (int i = 0; i < DEPTH; i++)
-        shift_reg[i] <= 0;
       sample_count <= 0;
-    end else if (in_valid) begin
-      // Shift incoming sample into register
+      for (int i = 0; i < DEPTH; i++)
+        shift_reg[i] <= '0;
+    end
+    else if (in_valid) begin
+      // shift
       for (int i = DEPTH-1; i > 0; i--)
         shift_reg[i] <= shift_reg[i-1];
       shift_reg[0] <= in_data;
-
-      // Update count
+      // saturate up to DEPTH
       if (sample_count < DEPTH)
         sample_count <= sample_count + 1;
     end
   end
 
-  // Combinational sum of the 5 elements
+  // --- combinational sum of what's stored right now ---
   always_comb begin
-    sum = 0;
+    sum_reg = '0;
     for (int i = 0; i < DEPTH; i++)
-      sum += shift_reg[i];
+      sum_reg += shift_reg[i];
   end
 
-  // Output logic
-  assign out_valid = in_valid;  // Keep it aligned with input stream
-
+  // --- zero-latency “next” logic for sum & count, then divide ---
   always_comb begin
-    if (sample_count < DEPTH)
-      out_data = in_data;       // Bypass for first 4 samples
+    // compute what the sum *will* be after we shift in this sample
+    logic [WIDTH + $clog2(DEPTH):0] next_sum;
+    // compute what the sample_count *will* be
+    logic [$clog2(DEPTH+1)-1:0] next_count;
+
+    // drop the oldest, add the new (if valid)
+    next_sum  = sum_reg - shift_reg[DEPTH-1]
+                + (in_valid ? in_data : '0);
+
+    // bump the count until it saturates at DEPTH
+    next_count = in_valid
+      ? (sample_count < DEPTH ? sample_count + 1 : DEPTH)
+      : sample_count;
+
+    // never divide by zero
+    if (next_count != 0)
+      out_data = next_sum / next_count;
     else
-      out_data = sum / DEPTH;   // Use filtered average
+      out_data = '0;
   end
+
+  assign out_valid = in_valid;
 
 endmodule

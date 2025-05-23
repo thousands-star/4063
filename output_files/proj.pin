@@ -30,11 +30,11 @@
  --                  Bank 1B:       2.5V
  --                  Bank 2:       2.5V
  --                  Bank 3:       3.3V
- --                  Bank 4:       2.5V
+ --                  Bank 4:       3.3V
  --                  Bank 5:       2.5V
  --                  Bank 6:       3.3V
  --                  Bank 7:       3.3V
- --                  Bank 8:       3.3V
+ --                  Bank 8:       2.5V
  -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
  --                  It can also be used to report unused dedicated pins. The connection
  --                  on the board for unused dedicated pins depends on whether this will
@@ -141,7 +141,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : B4        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 8         :                
 GND                          : B6        : gnd    :                   :         :           :                
-dtr_n                        : B7        : input  : 3.3-V LVTTL       :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B7        :        :                   :         : 8         :                
 KEY[0]                       : B8        : input  : 3.3-V LVTTL       :         : 7         : Y              
 GND                          : B9        : gnd    :                   :         :           :                
 LED[3]                       : B10       : output : 3.3-V LVTTL       :         : 7         : Y              
@@ -230,10 +230,10 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F4        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 1A        :                
 NC                           : F6        :        :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8         :                
-~ALTERA_CONF_DONE~ / RESERVED_INPUT : F8        : input  : 3.3 V Schmitt Trigger :         : 8         : N              
-VCCIO8                       : F9        : power  :                   : 3.3V    : 8         :                
+~ALTERA_CONF_DONE~ / RESERVED_INPUT : F8        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
+VCCIO8                       : F9        : power  :                   : 2.5V    : 8         :                
 GND                          : F10       : gnd    :                   :         :           :                
-VCCIO8                       : F11       : power  :                   : 3.3V    : 8         :                
+VCCIO8                       : F11       : power  :                   : 2.5V    : 8         :                
 VCCIO7                       : F12       : power  :                   : 3.3V    : 7         :                
 GND                          : F13       : gnd    :                   :         :           :                
 VCCIO7                       : F14       : power  :                   : 3.3V    : 7         :                
@@ -253,9 +253,9 @@ ANAIN1                       : G5        :        :                   :         
 GND                          : G6        : gnd    :                   :         :           :                
 VCCD_PLL3                    : G7        : power  :                   : 1.2V    :           :                
 GND                          : G8        : gnd    :                   :         :           :                
-~ALTERA_nSTATUS~ / RESERVED_INPUT : G9        : input  : 3.3 V Schmitt Trigger :         : 8         : N              
-VCCIO8                       : G10       : power  :                   : 3.3V    : 8         :                
-VCCIO8                       : G11       : power  :                   : 3.3V    : 8         :                
+~ALTERA_nSTATUS~ / RESERVED_INPUT : G9        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
+VCCIO8                       : G10       : power  :                   : 2.5V    : 8         :                
+VCCIO8                       : G11       : power  :                   : 2.5V    : 8         :                
 VCCIO7                       : G12       : power  :                   : 3.3V    : 7         :                
 VCCIO7                       : G13       : power  :                   : 3.3V    : 7         :                
 VCCIO7                       : G14       : power  :                   : 3.3V    : 7         :                
@@ -275,8 +275,8 @@ REFGND                       : H5        :        :                   :         
 ADC_VREF                     : H6        :        :                   :         :           :                
 VCCA_ADC                     : H7        : power  :                   : 2.5V    :           :                
 VCCA3                        : H8        : power  :                   : 2.5V    :           :                
-~ALTERA_nCONFIG~ / RESERVED_INPUT : H9        : input  : 3.3 V Schmitt Trigger :         : 8         : N              
-~ALTERA_CONFIG_SEL~ / RESERVED_INPUT : H10       : input  : 3.3-V LVTTL       :         : 8         : N              
+~ALTERA_nCONFIG~ / RESERVED_INPUT : H9        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
+~ALTERA_CONFIG_SEL~ / RESERVED_INPUT : H10       : input  : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H11       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H12       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H13       :        :                   :         : 7         :                
@@ -454,8 +454,8 @@ GND                          : T8        : gnd    :                   :         
 VCCIO3                       : T9        : power  :                   : 3.3V    : 3         :                
 VCCIO3                       : T10       : power  :                   : 3.3V    : 3         :                
 VCCIO3                       : T11       : power  :                   : 3.3V    : 3         :                
-VCCIO4                       : T12       : power  :                   : 2.5V    : 4         :                
-VCCIO4                       : T13       : power  :                   : 2.5V    : 4         :                
+VCCIO4                       : T12       : power  :                   : 3.3V    : 4         :                
+VCCIO4                       : T13       : power  :                   : 3.3V    : 4         :                
 GND                          : T14       : gnd    :                   :         :           :                
 VCCA4                        : T15       : power  :                   : 2.5V    :           :                
 GND                          : T16       : gnd    :                   :         :           :                
@@ -475,10 +475,10 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : U7        :        :                   :      
 VCCIO3                       : U8        : power  :                   : 3.3V    : 3         :                
 VCCIO3                       : U9        : power  :                   : 3.3V    : 3         :                
 GND                          : U10       : gnd    :                   :         :           :                
-VCCIO4                       : U11       : power  :                   : 2.5V    : 4         :                
-VCCIO4                       : U12       : power  :                   : 2.5V    : 4         :                
+VCCIO4                       : U11       : power  :                   : 3.3V    : 4         :                
+VCCIO4                       : U12       : power  :                   : 3.3V    : 4         :                
 GND                          : U13       : gnd    :                   :         :           :                
-VCCIO4                       : U14       : power  :                   : 2.5V    : 4         :                
+VCCIO4                       : U14       : power  :                   : 3.3V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U15       :        :                   :         : 4         :                
 VCCD_PLL4                    : U16       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U17       :        :                   :         : 5         :                
@@ -541,7 +541,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : Y7        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y8        :        :                   :         : 3         :                
 GND                          : Y9        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y10       :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y11       :        :                   :         : 4         :                
+dtr_n                        : Y11       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND                          : Y12       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y13       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y14       :        :                   :         : 4         :                
