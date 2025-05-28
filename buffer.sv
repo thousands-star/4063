@@ -4,6 +4,7 @@ module buffer #(
 )(
     input  logic        clk,
     input  logic        rst,
+	 input  logic        read_rst,
 
     // Write interface
     input  logic        write_en,
@@ -59,8 +60,8 @@ module buffer #(
     // ----------------------------
     // Read logic (cyclic)
     // ----------------------------
-    always_ff @(posedge clk or posedge rst) begin
-        if (rst)
+    always_ff @(posedge clk or posedge read_rst) begin
+        if (read_rst)
             rd_ptr <= 0;
         else if (read_en && !empty)
             rd_ptr <= (rd_ptr == count - 1) ? 0 : rd_ptr + 1;

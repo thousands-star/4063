@@ -9,29 +9,19 @@ def preview_csv_plot(filename):
 
     plt.figure(figsize=(14, 5))
 
-    # Left: Index vs Quantized
-    ax1 = plt.subplot(1, 2, 1)
-    ax1.plot(df['Quantized'], marker='o', linestyle='-', markersize=2, color='gray')
-    ax1.set_title("Preview: Index vs Quantized")
-    ax1.set_xlabel("Sample Index")
-    ax1.set_ylabel("Quantized Value (0-255)")
-    ax1.grid(True)
+    # Plot Index vs Quantized
+    plt.plot(df.index, df['Quantized'], marker='o', linestyle='-', markersize=2, color='gray', label='Index vs Quantized')
 
-    # Right: Time vs Quantized (if exists)
-    ax2 = plt.subplot(1, 2, 2)
+    # Plot Time vs Quantized (if 'time' exists)
     if 'time' in df.columns:
-        ax2.plot(df['time'], df['Quantized'], marker='x', linestyle='-', markersize=2, color='purple')
-        ax2.set_title("Preview: Time vs Quantized")
-        ax2.set_xlabel("Time (s)")
-        ax2.set_ylabel("Quantized Value (0-255)")
-        ax2.grid(True)
-    else:
-        ax2.text(0.5, 0.5, "No 'time' column in CSV", ha='center', va='center', fontsize=12)
-        ax2.axis('off')
+        plt.plot(df['time'] * max(df.index) / max(df['time']), df['Quantized'], marker='x', linestyle='-', markersize=2, color='purple', label='Time vs Quantized')
 
-    plt.suptitle("Preview of Data to be Transmitted")
+    plt.title("Preview of Data to be Transmitted")
+    plt.grid(True)
+    plt.legend(loc='upper right')
     plt.tight_layout()
     plt.show()
+
 
 def transmit_and_receive(port, baudrate, csv_path, receive_enabled=True):
     df = pd.read_csv(csv_path)

@@ -1,1 +1,2 @@
-Warning (10268): Verilog HDL information at fm_wave_gen1u.sv(2061): always construct contains both blocking and non-blocking assignments File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 2061
+Warning (10268): Verilog HDL information at fm_wave_gen1u.sv(2038): always construct contains both blocking and non-blocking assignments File: D:/YeeXun/ECE4063/4063proj/fm_wave_gen1u.sv Line: 2038
+Warning (10268): Verilog HDL information at triangle_wave_gen_d.sv(521): always construct contains both blocking and non-blocking assignments File: D:/YeeXun/ECE4063/4063proj/triangle_wave_gen_d.sv Line: 521

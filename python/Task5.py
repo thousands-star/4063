@@ -40,42 +40,36 @@ def load_original_csv(filename="uart_ready_output.csv"):
         return time_vals, values
     except FileNotFoundError:
         raise FileNotFoundError(f"Original CSV file '{filename}' not found.")
-
 def plot_index_comparison(original_vals, received_vals):
-    fig, axs = plt.subplots(2, 1, figsize=(12, 6), sharex=True)
+    plt.figure(figsize=(12, 4))
+    
+    plt.plot(original_vals, label='Original Signal', color='red', linestyle='--')
+    plt.plot(received_vals, label='Received Signal', color='blue')
 
-    axs[0].plot(original_vals, color='blue')
-    axs[0].set_title("Original Signal (Index Axis)")
-    axs[0].set_ylabel("Value (0-255)")
-    axs[0].grid(True)
-
-    axs[1].plot(received_vals, color='red')
-    axs[1].set_title("Received Signal (Index Axis)")
-    axs[1].set_xlabel("Sample Index")
-    axs[1].set_ylabel("Value (0-255)")
-    axs[1].grid(True)
-
+    plt.title("Original vs Received Signal (Index Axis)")
+    plt.xlabel("Sample Index")
+    plt.ylabel("Value (0-255)")
+    plt.grid(True)
+    plt.legend()
     plt.tight_layout()
     plt.show()
+
 
 def plot_time_comparison(time_vals, original_vals, received_vals):
     time_received = time_vals[:len(received_vals)]
 
-    fig, axs = plt.subplots(2, 1, figsize=(12, 6), sharex=True)
+    plt.figure(figsize=(12, 4))
+    plt.plot(time_vals, original_vals, label='Original Signal', color='blue')
+    plt.plot(time_received, received_vals, label='Received Signal', color='red', linestyle='--')
 
-    axs[0].plot(time_vals, original_vals, color='blue')
-    axs[0].set_title("Original Signal (Time Axis)")
-    axs[0].set_ylabel("Value (0-255)")
-    axs[0].grid(True)
-
-    axs[1].plot(time_received, received_vals, color='red')
-    axs[1].set_title("Received Signal (Time Axis)")
-    axs[1].set_xlabel("Time (s)")
-    axs[1].set_ylabel("Value (0-255)")
-    axs[1].grid(True)
-
+    plt.title("Original vs Received Signal")
+    plt.xlabel("Time (s)")
+    plt.ylabel("Value (0-255)")
+    plt.grid(True)
+    plt.legend()
     plt.tight_layout()
     plt.show()
+
 
 if __name__ == "__main__":
     port = "COM7"
@@ -106,6 +100,6 @@ if __name__ == "__main__":
             for i in range(cycle)
         ])
         plot_index_comparison(extended_original, received_data)
-        plot_time_comparison(extended_time, extended_original, received_data)
+        # plot_time_comparison(extended_time, extended_original, received_data)
     else:
         print("Original data or time axis not available for comparison.")

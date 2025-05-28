@@ -53,7 +53,7 @@ module main (
 
     fir_filter #(
         .WIDTH(8),
-        .DEPTH(20)
+        .DEPTH(29)
     ) u_fir (
         .clk        (CLOCK_50),
         .rst        (~KEY[0]),
@@ -91,9 +91,12 @@ module main (
         .out_data (square_data)
     );
 	 
-	 triangle_wave_gen u_triangle (
-		  .in_data  (buff_input),
-		  .out_data (triangle_data)
+	 triangle_wave_gen_d u_triangle (
+		  .in_data  (f_input),
+		  .out_data (triangle_data),
+		  .clk      (CLOCK_50),
+		  .rst      (~KEY[0]),
+		  .in_valid (filter_valid)
 	 );
 	 
 	 fm_wave_gen1u u_fm (
@@ -117,6 +120,7 @@ module main (
     ) buf_sine (
         .clk         (CLOCK_50),
         .rst         (~KEY[0]),
+		  .read_rst    (~SW[8]),
         .write_en    (filter_valid),
         .write_data  (buff_input),
         .read_en     (read_sine),
@@ -141,6 +145,7 @@ module main (
     ) buf_square (
         .clk         (CLOCK_50),
         .rst         (~KEY[0]),
+		  .read_rst    (~SW[8]),
         .write_en    (filter_valid),
         .write_data  (square_data),
         .read_en     (read_square),
@@ -165,6 +170,7 @@ module main (
 		) buf_triangle (
 			 .clk         (CLOCK_50),
 			 .rst         (~KEY[0]),
+			 .read_rst    (~SW[8]),
 			 .write_en    (filter_valid),     // write whenever the filtered sample is valid
 			 .write_data  (triangle_data),    // your triangle_wave_gen output
 			 .read_en     (read_triangle),
@@ -189,6 +195,7 @@ module main (
     ) buf_fm (
       .clk         (CLOCK_50),
       .rst         (~KEY[0]),
+		.read_rst    (~SW[8]),
       .write_en    (filter_valid),     // assert when your FM generator output is ready
       .write_data  (fm_data),      // connect to your fm_wave_gen out
       .read_en     (read_fm),
